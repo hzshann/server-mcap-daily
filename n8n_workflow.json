@@ -1,0 +1,163 @@
+{
+  "name": "每日市值日報",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 8 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "a1111111-0000-4000-8000-000000000001",
+      "name": "Schedule 08:00 Weekdays",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [100, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://hzshann.github.io/server-mcap-daily/summary.json",
+        "options": {}
+      },
+      "id": "a1111111-0000-4000-8000-000000000002",
+      "name": "Get Summary",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [320, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://hzshann.github.io/server-mcap-daily/server_preview.png",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "id": "a1111111-0000-4000-8000-000000000003",
+      "name": "Get Server PNG",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [540, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://hzshann.github.io/server-mcap-daily/foxconn_preview.png",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "id": "a1111111-0000-4000-8000-000000000004",
+      "name": "Get Foxconn PNG",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [760, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://hzshann.github.io/server-mcap-daily/server_chart.html",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "id": "a1111111-0000-4000-8000-000000000005",
+      "name": "Get Server HTML",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [980, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://hzshann.github.io/server-mcap-daily/foxconn_chart.html",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        }
+      },
+      "id": "a1111111-0000-4000-8000-000000000006",
+      "name": "Get Foxconn HTML",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1200, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const summary = $('Get Summary').first().json;\nconst d = summary.date;\nconst server = summary.groups.server;\nconst foxconn = summary.groups.foxconn;\n\nconst sign = (pct) => pct >= 0 ? '+' : '';\nconst arrow = (pct) => pct >= 0 ? '▲' : '▼';\n\nconst serverPngB64 = $('Get Server PNG').first().binary.data.data;\nconst foxconnPngB64 = $('Get Foxconn PNG').first().binary.data.data;\nconst serverHtmlBin = $('Get Server HTML').first().binary.data;\nconst foxconnHtmlBin = $('Get Foxconn HTML').first().binary.data;\n\nconst subject = `每日市值日報 ${d} — 伺服器 ${sign(server.total_change_pct)}${server.total_change_pct.toFixed(2)}% / 鴻海集團 ${sign(foxconn.total_change_pct)}${foxconn.total_change_pct.toFixed(2)}%`;\n\nconst renderTopList = (items, color) => items.map(x =>\n  `<li>${x.name} (${x.ticker}) <span style=\"color:${color};font-weight:bold\">${sign(x.change_pct)}${x.change_pct.toFixed(2)}%</span></li>`\n).join('');\n\nconst renderGroupSection = (g, pngB64) => {\n  const upColor = '#e63946', downColor = '#00a86b';\n  const totalColor = g.total_change_pct >= 0 ? upColor : downColor;\n  return `\n  <div style=\"margin:24px 0;padding:20px;background:#fafafa;border-radius:8px;\">\n    <h2 style=\"margin:0 0 8px 0;color:#222;\">${g.title}</h2>\n    <p style=\"margin:0 0 12px 0;font-size:18px;\">\n      組合總市值變化：\n      <span style=\"color:${totalColor};font-weight:bold;font-size:22px;\">\n        ${arrow(g.total_change_pct)} ${Math.abs(g.total_change_pct).toFixed(2)}%\n      </span>\n    </p>\n    <img src=\"data:image/png;base64,${pngB64}\" alt=\"${g.title} treemap\" style=\"max-width:100%;border-radius:4px;border:1px solid #ddd;display:block;\">\n    <div style=\"display:flex;gap:20px;margin-top:16px;flex-wrap:wrap;\">\n      <div style=\"flex:1;min-width:240px;\">\n        <h3 style=\"margin:0 0 6px 0;color:${upColor};\">Top 3 漲幅</h3>\n        <ul style=\"margin:0;padding-left:20px;\">${renderTopList(g.top_gainers, upColor)}</ul>\n      </div>\n      <div style=\"flex:1;min-width:240px;\">\n        <h3 style=\"margin:0 0 6px 0;color:${downColor};\">Top 3 跌幅</h3>\n        <ul style=\"margin:0;padding-left:20px;\">${renderTopList(g.top_losers, downColor)}</ul>\n      </div>\n    </div>\n  </div>`;\n};\n\nconst html = `<!doctype html>\n<html lang=\"zh-TW\">\n<head><meta charset=\"utf-8\"></head>\n<body style=\"font-family:'Microsoft JhengHei',sans-serif;max-width:760px;margin:0 auto;padding:20px;background:white;color:#222;\">\n  <h1 style=\"border-bottom:3px solid #e63946;padding-bottom:8px;\">每日市值日報</h1>\n  <p style=\"color:#666;\">資料日期：${d}</p>\n  ${renderGroupSection(server, serverPngB64)}\n  ${renderGroupSection(foxconn, foxconnPngB64)}\n  <p style=\"margin-top:32px;text-align:center;\">\n    <a href=\"https://hzshann.github.io/server-mcap-daily/\"\n       style=\"display:inline-block;padding:10px 20px;background:#0066cc;color:white;text-decoration:none;border-radius:6px;\">\n      開啟互動式圖表（可 hover 看細節）\n    </a>\n  </p>\n  <p style=\"color:#999;font-size:12px;text-align:center;margin-top:16px;\">\n    資料來源：Yahoo Finance | GitHub Actions 每日 07:30 Asia/Taipei 自動更新\n  </p>\n</body>\n</html>`;\n\nreturn [{\n  json: { subject, html },\n  binary: {\n    server_chart_html: { ...serverHtmlBin, fileName: `server_chart_${d}.html`, mimeType: 'text/html' },\n    foxconn_chart_html: { ...foxconnHtmlBin, fileName: `foxconn_chart_${d}.html`, mimeType: 'text/html' }\n  }\n}];"
+      },
+      "id": "a1111111-0000-4000-8000-000000000007",
+      "name": "Build Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1420, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "hzshann@gmail.com",
+        "subject": "={{ $json.subject }}",
+        "emailType": "html",
+        "message": "={{ $json.html }}",
+        "options": {
+          "attachmentsUi": {
+            "attachmentsBinary": [
+              { "property": "server_chart_html" },
+              { "property": "foxconn_chart_html" }
+            ]
+          }
+        }
+      },
+      "id": "a1111111-0000-4000-8000-000000000008",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1640, 300],
+      "credentials": {}
+    }
+  ],
+  "connections": {
+    "Schedule 08:00 Weekdays": {
+      "main": [[{ "node": "Get Summary", "type": "main", "index": 0 }]]
+    },
+    "Get Summary": {
+      "main": [[{ "node": "Get Server PNG", "type": "main", "index": 0 }]]
+    },
+    "Get Server PNG": {
+      "main": [[{ "node": "Get Foxconn PNG", "type": "main", "index": 0 }]]
+    },
+    "Get Foxconn PNG": {
+      "main": [[{ "node": "Get Server HTML", "type": "main", "index": 0 }]]
+    },
+    "Get Server HTML": {
+      "main": [[{ "node": "Get Foxconn HTML", "type": "main", "index": 0 }]]
+    },
+    "Get Foxconn HTML": {
+      "main": [[{ "node": "Build Email", "type": "main", "index": 0 }]]
+    },
+    "Build Email": {
+      "main": [[{ "node": "Send Email", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "tags": []
+}

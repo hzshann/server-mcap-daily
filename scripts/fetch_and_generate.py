@@ -45,20 +45,49 @@ _FONT_CANDIDATES = [
     "Microsoft JhengHei",
     "Microsoft YaHei",
     "Noto Sans CJK TC",
+    "Noto Sans CJK JP",  # ttc 預設 sub-font 通常是 JP，glyph 集合一樣涵蓋繁中
     "Noto Sans CJK SC",
+    "Noto Sans TC",
     "PingFang TC",
     "Heiti TC",
     "SimHei",
 ]
 
+# 直接路徑備援（Linux 上 fonts-noto-cjk 的安裝位置）
+_FONT_PATHS = [
+    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    "/usr/share/fonts/opentype/noto/NotoSansCJK.ttc",
+    "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+    str(Path.home() / ".fonts" / "NotoSansTC-Regular.otf"),
+    str(Path.home() / ".fonts" / "NotoSansTC-Regular.ttf"),
+]
+
 
 def _setup_font() -> str:
+    # 1) 先試名字命中
     available = {f.name for f in fm.fontManager.ttflist}
     for name in _FONT_CANDIDATES:
         if name in available:
             plt.rcParams["font.sans-serif"] = [name] + plt.rcParams["font.sans-serif"]
             plt.rcParams["axes.unicode_minus"] = False
+            print(f"  使用字型：{name}")
             return name
+
+    # 2) 名字沒命中，掃直接路徑、手動註冊
+    for path in _FONT_PATHS:
+        if Path(path).exists():
+            try:
+                fm.fontManager.addfont(path)
+                # 取剛註冊的字型名（重新 build ttflist）
+                fp = fm.FontProperties(fname=path)
+                name = fp.get_name()
+                plt.rcParams["font.sans-serif"] = [name] + plt.rcParams["font.sans-serif"]
+                plt.rcParams["axes.unicode_minus"] = False
+                print(f"  使用字型（直接路徑）：{name} ({path})")
+                return name
+            except Exception as e:
+                print(f"  ⚠️  載入 {path} 失敗：{e}", file=sys.stderr)
+
     print("⚠️  找不到中文字型，PNG 中的中文可能顯示為方框", file=sys.stderr)
     return ""
 
