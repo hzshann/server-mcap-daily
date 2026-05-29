@@ -3,8 +3,8 @@
   "group": "server",
   "title": "伺服器產業",
   "base_currency": "USD",
-  "total_market_cap": 20192137208217.117,
-  "total_change_pct": 1.5173682232431818,
+  "total_market_cap": 20192083430725.12,
+  "total_change_pct": 1.5173480845715603,
   "top_gainers": [
     {
       "name": "緯穎",
@@ -101,7 +101,7 @@
       "ticker": "2317.TW",
       "category": "台廠ODM",
       "change_pct": 9.885931558935361,
-      "market_cap": 128945088535.88477
+      "market_cap": 128916341289.32812
     },
     {
       "name": "HPE",
@@ -115,14 +115,14 @@
       "ticker": "2382.TW",
       "category": "台廠ODM",
       "change_pct": 9.886547811993516,
-      "market_cap": 41637933266.3916
+      "market_cap": 41628650431.75781
     },
     {
       "name": "緯穎",
       "ticker": "6669.TW",
       "category": "台廠ODM",
       "change_pct": 10.0,
-      "market_cap": 32244694372.130127
+      "market_cap": 32237505682.822266
     },
     {
       "name": "SuperMicro",
@@ -136,35 +136,35 @@
       "ticker": "3231.TW",
       "category": "台廠ODM",
       "change_pct": 9.688581314878892,
-      "market_cap": 16063197304.187134
+      "market_cap": 16059616146.512695
     },
     {
       "name": "英業達",
       "ticker": "2356.TW",
       "category": "台廠零組件",
       "change_pct": 9.859147530398479,
-      "market_cap": 8025005269.641968
+      "market_cap": 8023216160.745117
     },
     {
       "name": "技嘉",
       "ticker": "2376.TW",
       "category": "台廠零組件",
       "change_pct": 9.62962962962963,
-      "market_cap": 7898122466.254761
+      "market_cap": 7896361644.834961
     },
     {
       "name": "勤誠",
       "ticker": "8210.TW",
       "category": "台廠零組件",
       "change_pct": 3.018867924528302,
-      "market_cap": 5450915138.411621
+      "market_cap": 5449699901.730469
     },
     {
       "name": "華擎",
       "ticker": "3515.TW",
       "category": "台廠零組件",
       "change_pct": 3.640256959314775,
-      "market_cap": 952700888.214119
+      "market_cap": 952488491.3897095
     }
   ]
 }
