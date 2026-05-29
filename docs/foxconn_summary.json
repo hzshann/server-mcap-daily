@@ -3,8 +3,8 @@
   "group": "foxconn",
   "title": "鴻海集團 + 轉投資",
   "base_currency": "TWD",
-  "total_market_cap": 12138307734408.48,
-  "total_change_pct": 2.0957922942962575,
+  "total_market_cap": 12137237541771.934,
+  "total_change_pct": 2.0961874629406223,
   "top_gainers": [
     {
       "name": "鴻海",
@@ -45,7 +45,7 @@
       "ticker": "601138.SS",
       "category": "海外子公司",
       "change_pct": -2.133331298828125,
-      "market_cap": 6766286906045.625
+      "market_cap": 6765267321050.375
     },
     {
       "name": "鴻海",
@@ -66,7 +66,7 @@
       "ticker": "6088.HK",
       "category": "海外子公司",
       "change_pct": -3.47072276822891,
-      "market_cap": 253919177785.73438
+      "market_cap": 253868570144.4375
     },
     {
       "name": "帆宣",
