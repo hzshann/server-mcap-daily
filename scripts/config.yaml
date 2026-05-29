@@ -1,0 +1,56 @@
+# 每日市值日報 — 追蹤標的設定
+# 改完後本機跑 `python scripts/fetch_and_generate.py` 驗證即可
+
+groups:
+  server:
+    title: "伺服器產業"
+    # 顯示時方塊大小用市值；跨幣別會自動轉成 USD 比較（透過 yfinance 抓即時匯率）
+    base_currency: USD
+    companies:
+      # 美系雲端
+      - { ticker: MSFT,     name: Microsoft, category: 美系雲端 }
+      - { ticker: AMZN,     name: Amazon,    category: 美系雲端 }
+      - { ticker: GOOGL,    name: Google,    category: 美系雲端 }
+      - { ticker: ORCL,     name: Oracle,    category: 美系雲端 }
+      # 美系芯片
+      - { ticker: NVDA,     name: NVIDIA,    category: 美系芯片 }
+      - { ticker: AMD,      name: AMD,       category: 美系芯片 }
+      # 晶圓代工
+      - { ticker: TSM,      name: 台積電,    category: 晶圓代工 }
+      # 美系伺服器 OEM
+      - { ticker: DELL,     name: Dell,      category: 美系伺服器 }
+      - { ticker: HPE,      name: HPE,       category: 美系伺服器 }
+      - { ticker: SMCI,     name: SuperMicro, category: 美系伺服器 }
+      # 台廠 ODM
+      - { ticker: 2317.TW,  name: 鴻海,      category: 台廠ODM }
+      - { ticker: 2382.TW,  name: 廣達,      category: 台廠ODM }
+      - { ticker: 3231.TW,  name: 緯創,      category: 台廠ODM }
+      - { ticker: 6669.TW,  name: 緯穎,      category: 台廠ODM }
+      # 台廠零組件
+      - { ticker: 2356.TW,  name: 英業達,    category: 台廠零組件 }
+      - { ticker: 2376.TW,  name: 技嘉,      category: 台廠零組件 }
+      - { ticker: 3515.TW,  name: 華擎,      category: 台廠零組件 }
+      - { ticker: 8210.TW,  name: 勤誠,      category: 台廠零組件 }
+
+  foxconn:
+    title: "鴻海集團 + 轉投資"
+    base_currency: TWD
+    companies:
+      # 母公司
+      - { ticker: 2317.TW,    name: 鴻海,       category: 母公司 }
+      # 直系子公司（台股）
+      - { ticker: 2354.TW,    name: 鴻準,       category: 直系子公司 }
+      - { ticker: 2328.TW,    name: 廣宇,       category: 直系子公司 }
+      - { ticker: 6414.TW,    name: 樺漢,       category: 直系子公司 }
+      - { ticker: 4958.TW,    name: 臻鼎-KY,    category: 直系子公司 }
+      - { ticker: 3413.TW,    name: 京鼎,       category: 直系子公司 }
+      - { ticker: 8261.TW,    name: 富鼎,       category: 直系子公司 }
+      # 海外子公司
+      - { ticker: 6088.HK,    name: 鴻騰精密FIT, category: 海外子公司 }
+      - { ticker: 601138.SS,  name: 工業富聯FII, category: 海外子公司 }
+      # 轉投資
+      - { ticker: 6196.TW,    name: 帆宣,       category: 轉投資 }
+      - { ticker: 2392.TW,    name: 正崴,       category: 轉投資 }
+      - { ticker: 5243.TW,    name: 乙盛-KY,    category: 轉投資 }
+      - { ticker: 6451.TW,    name: 訊芯-KY,    category: 轉投資 }
+      - { ticker: 6753.T,     name: Sharp夏普,  category: 轉投資 }

@@ -1,0 +1,142 @@
+{
+  "date": "2026-05-29",
+  "group": "foxconn",
+  "title": "鴻海集團 + 轉投資",
+  "base_currency": "TWD",
+  "total_market_cap": 12138307734408.48,
+  "total_change_pct": 2.0957922942962575,
+  "top_gainers": [
+    {
+      "name": "鴻海",
+      "ticker": "2317.TW",
+      "change_pct": 9.885931558935361
+    },
+    {
+      "name": "臻鼎-KY",
+      "ticker": "4958.TW",
+      "change_pct": 5.967078189300412
+    },
+    {
+      "name": "乙盛-KY",
+      "ticker": "5243.TW",
+      "change_pct": 4.979253112033195
+    }
+  ],
+  "top_losers": [
+    {
+      "name": "富鼎",
+      "ticker": "8261.TW",
+      "change_pct": -4.736842105263158
+    },
+    {
+      "name": "鴻騰精密FIT",
+      "ticker": "6088.HK",
+      "change_pct": -3.47072276822891
+    },
+    {
+      "name": "工業富聯FII",
+      "ticker": "601138.SS",
+      "change_pct": -2.133331298828125
+    }
+  ],
+  "all": [
+    {
+      "name": "工業富聯FII",
+      "ticker": "601138.SS",
+      "category": "海外子公司",
+      "change_pct": -2.133331298828125,
+      "market_cap": 6766286906045.625
+    },
+    {
+      "name": "鴻海",
+      "ticker": "2317.TW",
+      "category": "母公司",
+      "change_pct": 9.885931558935361,
+      "market_cap": 4046554923008.0
+    },
+    {
+      "name": "臻鼎-KY",
+      "ticker": "4958.TW",
+      "category": "直系子公司",
+      "change_pct": 5.967078189300412,
+      "market_cap": 555901714432.0
+    },
+    {
+      "name": "鴻騰精密FIT",
+      "ticker": "6088.HK",
+      "category": "海外子公司",
+      "change_pct": -3.47072276822891,
+      "market_cap": 253919177785.73438
+    },
+    {
+      "name": "帆宣",
+      "ticker": "6196.TW",
+      "category": "轉投資",
+      "change_pct": 3.024193548387097,
+      "market_cap": 112588390400.0
+    },
+    {
+      "name": "鴻準",
+      "ticker": "2354.TW",
+      "category": "直系子公司",
+      "change_pct": 4.459695236437622,
+      "market_cap": 86142156800.0
+    },
+    {
+      "name": "Sharp夏普",
+      "ticker": "6753.T",
+      "category": "轉投資",
+      "change_pct": -0.016083589102985442,
+      "market_cap": 78650750097.12012
+    },
+    {
+      "name": "訊芯-KY",
+      "ticker": "6451.TW",
+      "category": "轉投資",
+      "change_pct": 0.17574692442882248,
+      "market_cap": 60519067648.0
+    },
+    {
+      "name": "樺漢",
+      "ticker": "6414.TW",
+      "category": "直系子公司",
+      "change_pct": 2.269503546099291,
+      "market_cap": 52592046080.0
+    },
+    {
+      "name": "京鼎",
+      "ticker": "3413.TW",
+      "category": "直系子公司",
+      "change_pct": 0.628930817610063,
+      "market_cap": 35382718464.0
+    },
+    {
+      "name": "廣宇",
+      "ticker": "2328.TW",
+      "category": "直系子公司",
+      "change_pct": 4.716981132075472,
+      "market_cap": 28768217088.0
+    },
+    {
+      "name": "富鼎",
+      "ticker": "8261.TW",
+      "category": "直系子公司",
+      "change_pct": -4.736842105263158,
+      "market_cap": 21516918784.0
+    },
+    {
+      "name": "乙盛-KY",
+      "ticker": "5243.TW",
+      "category": "轉投資",
+      "change_pct": 4.979253112033195,
+      "market_cap": 21318907904.0
+    },
+    {
+      "name": "正崴",
+      "ticker": "2392.TW",
+      "category": "轉投資",
+      "change_pct": 4.249663769658355,
+      "market_cap": 18165839872.0
+    }
+  ]
+}
