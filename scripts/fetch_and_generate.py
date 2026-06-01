@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import json
+import math
 import sys
 import time
 from datetime import datetime
@@ -172,12 +173,23 @@ def _fmt_price(price: float, currency: str) -> str:
     return f"{sym}{price:,.2f}"
 
 
+def _per_tile_font_sizes(values: List[float], min_px: int = 7, max_px: int = 28) -> List[float]:
+    """按 tile 面積對數比例給每個 tile 一個字體大小：大 tile 字大、小 tile 字小但仍可見"""
+    if not values:
+        return []
+    log_vals = [math.log(v) if v > 0 else 0 for v in values]
+    lo, hi = min(log_vals), max(log_vals)
+    span = hi - lo if hi > lo else 1
+    return [min_px + (lg - lo) / span * (max_px - min_px) for lg in log_vals]
+
+
 def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figure:
     """同一張 Plotly Figure，輸出互動式 HTML 與靜態 PNG（kaleido）共用"""
     rows_sorted = sorted(rows, key=lambda r: r["market_cap_base"], reverse=True)
     labels = [r["name"] for r in rows_sorted]
     values = [r["market_cap_base"] for r in rows_sorted]
     colors = [_color_for_pct(r["change_pct"]) for r in rows_sorted]
+    font_sizes = _per_tile_font_sizes(values)
     customdata = [
         [
             r["ticker"],
@@ -210,7 +222,8 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
                 "資料日：%{customdata[4]}<extra></extra>"
             ),
             marker=dict(colors=colors, line=dict(width=2, color="white")),
-            textfont=dict(size=16, color="white", family=PLOTLY_FONT_FAMILY),
+            # 每個 tile 一個獨立字體大小（依 log 市值比例）；無 uniformtext 以避免 Plotly 統一縮放
+            textfont=dict(size=font_sizes, color="white", family=PLOTLY_FONT_FAMILY),
             tiling=dict(packing="squarify"),
         )
     )
@@ -220,8 +233,6 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
         font=dict(family=PLOTLY_FONT_FAMILY),
         margin=dict(t=60, l=10, r=10, b=10),
         paper_bgcolor="#fafafa",
-        # 'show' = 全部 tile 都要顯示文字、自動縮小到能塞下；minsize=6 給一個很低的下限
-        uniformtext=dict(minsize=6, mode="show"),
     )
     return fig
 
