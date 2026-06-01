@@ -220,8 +220,7 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
         font=dict(family=PLOTLY_FONT_FAMILY),
         margin=dict(t=60, l=10, r=10, b=10),
         paper_bgcolor="#fafafa",
-        # 自動隱藏放不下的小 tile 文字（不出現截斷/重疊）
-        uniformtext=dict(minsize=11, mode="hide"),
+        # 不設 uniformtext：讓 Plotly 預設行為生效，每個 tile 各自縮放字體
     )
     return fig
 
