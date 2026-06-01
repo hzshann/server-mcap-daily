@@ -3,8 +3,8 @@
   "group": "foxconn",
   "title": "鴻海集團 + 轉投資",
   "base_currency": "TWD",
-  "total_market_cap": 12143685284067.293,
-  "total_change_pct": 2.0937066098614068,
+  "total_market_cap": 12144262597529.705,
+  "total_change_pct": 2.0935903590533607,
   "top_gainers": [
     {
       "name": "鴻海",
@@ -96,7 +96,7 @@
       "last_close": 8.899999618530273,
       "currency": "HKD",
       "price_display": "HK$8.90",
-      "market_cap": 254064753970.35938
+      "market_cap": 254298901071.625
     },
     {
       "name": "帆宣",
@@ -126,7 +126,7 @@
       "last_close": 621.5,
       "currency": "JPY",
       "price_display": "¥622",
-      "market_cap": 78650750097.12012
+      "market_cap": 78691099178.26758
     },
     {
       "name": "訊芯-KY",
@@ -146,7 +146,7 @@
       "last_close": 360.5,
       "currency": "TWD",
       "price_display": "NT$360.50",
-      "market_cap": 52289228800.0
+      "market_cap": 52592046080.0
     },
     {
       "name": "京鼎",
