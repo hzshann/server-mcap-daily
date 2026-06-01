@@ -7,13 +7,13 @@
           "interval": [
             {
               "field": "cronExpression",
-              "expression": "0 8 * * 1-5"
+              "expression": "45 14 * * 1-5"
             }
           ]
         }
       },
       "id": "a1111111-0000-4000-8000-000000000001",
-      "name": "Schedule 08:00 Weekdays",
+      "name": "Schedule 14:45 Weekdays",
       "type": "n8n-nodes-base.scheduleTrigger",
       "typeVersion": 1.2,
       "position": [100, 300]
@@ -135,7 +135,7 @@
     }
   ],
   "connections": {
-    "Schedule 08:00 Weekdays": {
+    "Schedule 14:45 Weekdays": {
       "main": [[{ "node": "Get Summary", "type": "main", "index": 0 }]]
     },
     "Get Summary": {

@@ -1,7 +1,7 @@
 # n8n Cloud workflow 設定指南
 
 ## 目標
-每工作日 08:00 Asia/Taipei 從 GitHub Pages 抓圖、組信、寄到 `hzshann@gmail.com`。
+每工作日 14:45 Asia/Taipei（台股收盤後）從 GitHub Pages 抓圖、組信、寄到 `hzshann@gmail.com`。
 
 ## 前置作業
 - n8n Cloud 帳號（已有）
@@ -29,7 +29,7 @@
 - 拉 **Schedule Trigger** 到畫布
 - Settings：
   - Trigger Interval: `Custom (Cron)`
-  - Cron Expression: `0 8 * * 1-5`
+  - Cron Expression: `45 14 * * 1-5`
   - Timezone: `Asia/Taipei`
 
 ### Node 2-6: HTTP Request × 5

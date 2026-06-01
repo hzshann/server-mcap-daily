@@ -5,13 +5,13 @@
 ## 系統架構
 
 ```
-07:30 Asia/Taipei  →  GitHub Actions
+14:30 Asia/Taipei  →  GitHub Actions（台股 13:30 收盤後 1 小時，拿得到當日收盤）
                       ├ 跑 scripts/fetch_and_generate.py
                       ├ yfinance 抓 ~30 家公司
                       ├ 產出 docs/*.html / *.png / *.json
                       └ git commit + push → GitHub Pages 自動部署
 
-08:00 Asia/Taipei  →  n8n Cloud workflow
+14:45 Asia/Taipei  →  n8n Cloud workflow
                       ├ 抓 GitHub Pages 上的 summary.json + preview.png + chart.html
                       └ Gmail node 寄信到 hzshann@gmail.com
 ```
@@ -65,7 +65,7 @@ groups:
 
 ## 已知限制
 
-- 週末 cron 不跑（`0-4` 是週日~週四 UTC = 週一~週五 Taipei）
+- 週末 cron 不跑（`1-5` UTC 對應週一~週五 Taipei，因為 14:30 Taipei = 06:30 UTC 同一天）
 - yfinance 偶發抓不到，有 3 次 retry
 - Gmail 會 strip JavaScript，所以信件內文用 PNG 預覽，互動式 treemap 以 HTML 附件 + Pages 連結方式提供
 - 跨幣別的市值自動轉成 group 的 `base_currency` 比較

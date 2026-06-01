@@ -40,31 +40,31 @@ COLOR_FLAT = "#dddddd"
 # 漲跌幅顏色映射範圍：±3% 為飽和上下限
 COLOR_RANGE_PCT = 3.0
 
-# 中文字型設定（Windows / Linux 各一份備援）
+# 中文字型備援名單（mplfonts 失敗時用）
 _FONT_CANDIDATES = [
+    "Source Han Sans CN",
+    "Source Han Sans TC",
+    "Noto Sans CJK SC",
+    "Noto Sans CJK TC",
+    "Noto Sans CJK JP",
     "Microsoft JhengHei",
     "Microsoft YaHei",
-    "Noto Sans CJK TC",
-    "Noto Sans CJK JP",  # ttc 預設 sub-font 通常是 JP，glyph 集合一樣涵蓋繁中
-    "Noto Sans CJK SC",
-    "Noto Sans TC",
-    "PingFang TC",
-    "Heiti TC",
     "SimHei",
-]
-
-# 直接路徑備援（Linux 上 fonts-noto-cjk 的安裝位置）
-_FONT_PATHS = [
-    "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-    "/usr/share/fonts/opentype/noto/NotoSansCJK.ttc",
-    "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
-    str(Path.home() / ".fonts" / "NotoSansTC-Regular.otf"),
-    str(Path.home() / ".fonts" / "NotoSansTC-Regular.ttf"),
 ]
 
 
 def _setup_font() -> str:
-    # 1) 先試名字命中
+    # 主方案：mplfonts 內建打包 Source Han Sans 字型（pip 裝完直接可用）
+    try:
+        from mplfonts import use_font  # type: ignore
+        use_font("Noto Sans CJK SC")
+        plt.rcParams["axes.unicode_minus"] = False
+        print("  使用字型：Noto Sans CJK SC (via mplfonts)")
+        return "Noto Sans CJK SC"
+    except Exception as e:
+        print(f"  mplfonts 載入失敗 ({e})，改用系統字型備援", file=sys.stderr)
+
+    # 備援：系統字型名稱命中
     available = {f.name for f in fm.fontManager.ttflist}
     for name in _FONT_CANDIDATES:
         if name in available:
@@ -72,21 +72,6 @@ def _setup_font() -> str:
             plt.rcParams["axes.unicode_minus"] = False
             print(f"  使用字型：{name}")
             return name
-
-    # 2) 名字沒命中，掃直接路徑、手動註冊
-    for path in _FONT_PATHS:
-        if Path(path).exists():
-            try:
-                fm.fontManager.addfont(path)
-                # 取剛註冊的字型名（重新 build ttflist）
-                fp = fm.FontProperties(fname=path)
-                name = fp.get_name()
-                plt.rcParams["font.sans-serif"] = [name] + plt.rcParams["font.sans-serif"]
-                plt.rcParams["axes.unicode_minus"] = False
-                print(f"  使用字型（直接路徑）：{name} ({path})")
-                return name
-            except Exception as e:
-                print(f"  ⚠️  載入 {path} 失敗：{e}", file=sys.stderr)
 
     print("⚠️  找不到中文字型，PNG 中的中文可能顯示為方框", file=sys.stderr)
     return ""
@@ -215,6 +200,15 @@ def _fmt_mcap(value_base: float, base_ccy: str) -> str:
     return f"{value_base / 1e6:.0f}M"
 
 
+def _fmt_price(price: float, currency: str) -> str:
+    """收盤股價格式：含幣別符號"""
+    symbols = {"USD": "$", "TWD": "NT$", "HKD": "HK$", "JPY": "¥", "CNY": "¥"}
+    sym = symbols.get(currency, f"{currency} ")
+    if currency == "JPY":
+        return f"{sym}{price:,.0f}"
+    return f"{sym}{price:,.2f}"
+
+
 def generate_plotly_treemap(rows: List[dict], title: str, base_ccy: str) -> str:
     """產生互動式 Plotly treemap HTML 字串"""
     labels = [r["name"] for r in rows]
@@ -227,11 +221,12 @@ def generate_plotly_treemap(rows: List[dict], title: str, base_ccy: str) -> str:
             r["change_pct"],
             _fmt_mcap(r["market_cap_base"], base_ccy),
             r["as_of"],
+            _fmt_price(r["last_close"], r["currency"]),
         ]
         for r in rows
     ]
     text = [
-        f"<b>{r['name']}</b><br>{r['change_pct']:+.2f}%<br>{_fmt_mcap(r['market_cap_base'], base_ccy)}"
+        f"<b>{r['name']}</b><br>{r['change_pct']:+.2f}%<br>{_fmt_price(r['last_close'], r['currency'])}<br>{_fmt_mcap(r['market_cap_base'], base_ccy)}"
         for r in rows
     ]
     fig = go.Figure(
@@ -246,6 +241,7 @@ def generate_plotly_treemap(rows: List[dict], title: str, base_ccy: str) -> str:
                 "<b>%{label}</b> (%{customdata[0]})<br>"
                 "分類：%{customdata[1]}<br>"
                 "漲跌：%{customdata[2]:+.2f}%<br>"
+                "收盤：%{customdata[5]}<br>"
                 "市值：%{customdata[3]}<br>"
                 "資料日：%{customdata[4]}<extra></extra>"
             ),
@@ -269,7 +265,7 @@ def generate_static_png(rows: List[dict], title: str, base_ccy: str, out_path: P
     values = [r["market_cap_base"] for r in rows_sorted]
     colors = [_color_for_pct(r["change_pct"]) for r in rows_sorted]
     labels = [
-        f"{r['name']}\n{r['change_pct']:+.2f}%\n{_fmt_mcap(r['market_cap_base'], base_ccy)}"
+        f"{r['name']}\n{r['change_pct']:+.2f}%\n{_fmt_price(r['last_close'], r['currency'])}\n{_fmt_mcap(r['market_cap_base'], base_ccy)}"
         for r in rows_sorted
     ]
 
@@ -307,11 +303,25 @@ def build_summary(rows: List[dict], group_key: str, group_cfg: dict) -> dict:
         "total_market_cap": total_mcap,
         "total_change_pct": total_change,
         "top_gainers": [
-            {"name": r["name"], "ticker": r["ticker"], "change_pct": r["change_pct"]}
+            {
+                "name": r["name"],
+                "ticker": r["ticker"],
+                "change_pct": r["change_pct"],
+                "last_close": r["last_close"],
+                "currency": r["currency"],
+                "price_display": _fmt_price(r["last_close"], r["currency"]),
+            }
             for r in sorted_by_pct[:3]
         ],
         "top_losers": [
-            {"name": r["name"], "ticker": r["ticker"], "change_pct": r["change_pct"]}
+            {
+                "name": r["name"],
+                "ticker": r["ticker"],
+                "change_pct": r["change_pct"],
+                "last_close": r["last_close"],
+                "currency": r["currency"],
+                "price_display": _fmt_price(r["last_close"], r["currency"]),
+            }
             for r in sorted_by_pct[-3:][::-1]
         ],
         "all": [
@@ -320,6 +330,9 @@ def build_summary(rows: List[dict], group_key: str, group_cfg: dict) -> dict:
                 "ticker": r["ticker"],
                 "category": r["category"],
                 "change_pct": r["change_pct"],
+                "last_close": r["last_close"],
+                "currency": r["currency"],
+                "price_display": _fmt_price(r["last_close"], r["currency"]),
                 "market_cap": r["market_cap_base"],
             }
             for r in sorted(rows, key=lambda r: r["market_cap_base"], reverse=True)
