@@ -178,6 +178,11 @@ CANVAS_W = 1400
 CANVAS_H = 900
 
 
+def _esc_dollar(s: str) -> str:
+    """Plotly 文字預設啟用 MathJax，兩個 $ 之間會被當 LaTeX 公式。換成 HTML entity 避免。"""
+    return s.replace("$", "&#36;")
+
+
 def _font_size_for_tile(dx: float, dy: float) -> float:
     """從 tile 寬高算合適字體（px）：小邊長除常數 + 上下限"""
     short = min(dx, dy)
@@ -215,12 +220,12 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
             layer="below",
         )
 
-        # 文字：四行（公司、漲跌、收盤、市值）
+        # 文字：四行（公司、漲跌、收盤、市值）；$ 都要 escape 否則 Plotly 會誤判為 LaTeX
         text = (
             f"<b>{r['name']}</b><br>"
             f"{r['change_pct']:+.2f}%<br>"
-            f"{_fmt_price(r['last_close'], r['currency'])}<br>"
-            f"{_fmt_mcap(r['market_cap_base'], base_ccy)}"
+            f"{_esc_dollar(_fmt_price(r['last_close'], r['currency']))}<br>"
+            f"{_esc_dollar(_fmt_mcap(r['market_cap_base'], base_ccy))}"
         )
         fig.add_annotation(
             x=x + dx / 2,
@@ -240,8 +245,8 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
             f"<b>{r['name']}</b> ({r['ticker']})<br>"
             f"分類：{r['category']}<br>"
             f"漲跌：{r['change_pct']:+.2f}%<br>"
-            f"收盤：{_fmt_price(r['last_close'], r['currency'])}<br>"
-            f"市值：{_fmt_mcap(r['market_cap_base'], base_ccy)}<br>"
+            f"收盤：{_esc_dollar(_fmt_price(r['last_close'], r['currency']))}<br>"
+            f"市值：{_esc_dollar(_fmt_mcap(r['market_cap_base'], base_ccy))}<br>"
             f"資料日：{r['as_of']}"
         )
 
