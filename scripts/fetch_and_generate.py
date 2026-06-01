@@ -16,6 +16,7 @@ from typing import Dict, List, Optional
 
 import pandas as pd
 import plotly.graph_objects as go
+import squarify
 import yaml
 import yfinance as yf
 
@@ -173,66 +174,102 @@ def _fmt_price(price: float, currency: str) -> str:
     return f"{sym}{price:,.2f}"
 
 
-def _per_tile_font_sizes(values: List[float], min_px: int = 7, max_px: int = 28) -> List[float]:
-    """按 tile 面積對數比例給每個 tile 一個字體大小：大 tile 字大、小 tile 字小但仍可見"""
-    if not values:
-        return []
-    log_vals = [math.log(v) if v > 0 else 0 for v in values]
-    lo, hi = min(log_vals), max(log_vals)
-    span = hi - lo if hi > lo else 1
-    return [min_px + (lg - lo) / span * (max_px - min_px) for lg in log_vals]
+CANVAS_W = 1400
+CANVAS_H = 900
+
+
+def _font_size_for_tile(dx: float, dy: float) -> float:
+    """從 tile 寬高算合適字體（px）：小邊長除常數 + 上下限"""
+    short = min(dx, dy)
+    # 公司名 + 3 行數字共 4 行，每行字體 ≈ tile 短邊 / 12
+    size = short / 12
+    return max(7.0, min(28.0, size))
 
 
 def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figure:
-    """同一張 Plotly Figure，輸出互動式 HTML 與靜態 PNG（kaleido）共用"""
+    """用 squarify 自己算 layout + add_shape + add_annotation，達成每個 tile 自有字體大小"""
     rows_sorted = sorted(rows, key=lambda r: r["market_cap_base"], reverse=True)
-    labels = [r["name"] for r in rows_sorted]
     values = [r["market_cap_base"] for r in rows_sorted]
-    colors = [_color_for_pct(r["change_pct"]) for r in rows_sorted]
-    font_sizes = _per_tile_font_sizes(values)
-    customdata = [
-        [
-            r["ticker"],
-            r["category"],
-            r["change_pct"],
-            _fmt_mcap(r["market_cap_base"], base_ccy),
-            r["as_of"],
-            _fmt_price(r["last_close"], r["currency"]),
-        ]
-        for r in rows_sorted
-    ]
-    text = [
-        f"<b>{r['name']}</b><br>{r['change_pct']:+.2f}%<br>{_fmt_price(r['last_close'], r['currency'])}<br>{_fmt_mcap(r['market_cap_base'], base_ccy)}"
-        for r in rows_sorted
-    ]
-    fig = go.Figure(
-        go.Treemap(
-            labels=labels,
-            parents=[""] * len(rows_sorted),
-            values=values,
+
+    # 算 layout（單位：px）
+    normed = squarify.normalize_sizes(values, CANVAS_W, CANVAS_H)
+    rects = squarify.squarify(normed, 0, 0, CANVAS_W, CANVAS_H)
+
+    fig = go.Figure()
+
+    # invisible scatter 提供 hover（覆蓋整張圖，每個 tile 一個點）
+    hover_x, hover_y, hover_text = [], [], []
+
+    for r, rect in zip(rows_sorted, rects):
+        x, y = rect["x"], rect["y"]
+        dx, dy = rect["dx"], rect["dy"]
+        color = _color_for_pct(r["change_pct"])
+        font_px = _font_size_for_tile(dx, dy)
+
+        # 方塊
+        fig.add_shape(
+            type="rect",
+            x0=x, y0=y, x1=x + dx, y1=y + dy,
+            fillcolor=color,
+            line=dict(color="white", width=2),
+            layer="below",
+        )
+
+        # 文字：四行（公司、漲跌、收盤、市值）
+        text = (
+            f"<b>{r['name']}</b><br>"
+            f"{r['change_pct']:+.2f}%<br>"
+            f"{_fmt_price(r['last_close'], r['currency'])}<br>"
+            f"{_fmt_mcap(r['market_cap_base'], base_ccy)}"
+        )
+        fig.add_annotation(
+            x=x + dx / 2,
+            y=y + dy / 2,
             text=text,
-            textinfo="text",
-            customdata=customdata,
-            hovertemplate=(
-                "<b>%{label}</b> (%{customdata[0]})<br>"
-                "分類：%{customdata[1]}<br>"
-                "漲跌：%{customdata[2]:+.2f}%<br>"
-                "收盤：%{customdata[5]}<br>"
-                "市值：%{customdata[3]}<br>"
-                "資料日：%{customdata[4]}<extra></extra>"
-            ),
-            marker=dict(colors=colors, line=dict(width=2, color="white")),
-            # 每個 tile 一個獨立字體大小（依 log 市值比例）；無 uniformtext 以避免 Plotly 統一縮放
-            textfont=dict(size=font_sizes, color="white", family=PLOTLY_FONT_FAMILY),
-            tiling=dict(packing="squarify"),
+            showarrow=False,
+            font=dict(size=font_px, color="white", family=PLOTLY_FONT_FAMILY),
+            align="center",
+            xanchor="center",
+            yanchor="middle",
+        )
+
+        # hover overlay 點
+        hover_x.append(x + dx / 2)
+        hover_y.append(y + dy / 2)
+        hover_text.append(
+            f"<b>{r['name']}</b> ({r['ticker']})<br>"
+            f"分類：{r['category']}<br>"
+            f"漲跌：{r['change_pct']:+.2f}%<br>"
+            f"收盤：{_fmt_price(r['last_close'], r['currency'])}<br>"
+            f"市值：{_fmt_mcap(r['market_cap_base'], base_ccy)}<br>"
+            f"資料日：{r['as_of']}"
+        )
+
+    # invisible scatter 提供 hover；marker 大小撐滿 tile 用 scatter 不好做，
+    # 折衷：用半透明 scatter 點當 hover anchor（HTML 用、PNG 看不見）
+    fig.add_trace(
+        go.Scatter(
+            x=hover_x, y=hover_y,
+            mode="markers",
+            marker=dict(size=1, opacity=0),
+            text=hover_text,
+            hoverinfo="text",
+            showlegend=False,
         )
     )
+
     today = datetime.now().strftime("%Y-%m-%d")
     fig.update_layout(
         title=dict(text=f"{title}（{today}）", font=dict(size=22, family=PLOTLY_FONT_FAMILY)),
         font=dict(family=PLOTLY_FONT_FAMILY),
         margin=dict(t=60, l=10, r=10, b=10),
         paper_bgcolor="#fafafa",
+        plot_bgcolor="white",
+        xaxis=dict(visible=False, range=[0, CANVAS_W], fixedrange=True),
+        # squarify 的 y=0 在上方，PNG 渲染需要反轉；用 autorange='reversed' 讓 y 軸從上到下增加
+        yaxis=dict(visible=False, range=[CANVAS_H, 0], fixedrange=True),
+        width=CANVAS_W,
+        height=CANVAS_H + 60,
     )
     return fig
 
