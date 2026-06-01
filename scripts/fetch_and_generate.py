@@ -13,13 +13,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional
 
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
 import pandas as pd
 import plotly.graph_objects as go
-import squarify
 import yaml
 import yfinance as yf
 
@@ -40,41 +35,9 @@ COLOR_FLAT = "#dddddd"
 # 漲跌幅顏色映射範圍：±3% 為飽和上下限
 COLOR_RANGE_PCT = 3.0
 
-# 中文字型備援名單（mplfonts 失敗時用）
-_FONT_CANDIDATES = [
-    "Source Han Sans CN",
-    "Source Han Sans TC",
-    "Noto Sans CJK SC",
-    "Noto Sans CJK TC",
-    "Noto Sans CJK JP",
-    "Microsoft JhengHei",
-    "Microsoft YaHei",
-    "SimHei",
-]
+# Plotly 字型 fallback chain：Linux 走 Noto CJK（apt fonts-noto-cjk）、Windows 走 Microsoft JhengHei
+PLOTLY_FONT_FAMILY = "Noto Sans CJK TC, Noto Sans CJK SC, Microsoft JhengHei, PingFang TC, sans-serif"
 
-
-def _setup_font() -> str:
-    # 主方案：mplfonts 內建打包 Source Han Sans 字型（pip 裝完直接可用）
-    try:
-        from mplfonts import use_font  # type: ignore
-        use_font("Noto Sans CJK SC")
-        plt.rcParams["axes.unicode_minus"] = False
-        print("  使用字型：Noto Sans CJK SC (via mplfonts)")
-        return "Noto Sans CJK SC"
-    except Exception as e:
-        print(f"  mplfonts 載入失敗 ({e})，改用系統字型備援", file=sys.stderr)
-
-    # 備援：系統字型名稱命中
-    available = {f.name for f in fm.fontManager.ttflist}
-    for name in _FONT_CANDIDATES:
-        if name in available:
-            plt.rcParams["font.sans-serif"] = [name] + plt.rcParams["font.sans-serif"]
-            plt.rcParams["axes.unicode_minus"] = False
-            print(f"  使用字型：{name}")
-            return name
-
-    print("⚠️  找不到中文字型，PNG 中的中文可能顯示為方框", file=sys.stderr)
-    return ""
 
 
 def load_config() -> dict:
@@ -209,11 +172,12 @@ def _fmt_price(price: float, currency: str) -> str:
     return f"{sym}{price:,.2f}"
 
 
-def generate_plotly_treemap(rows: List[dict], title: str, base_ccy: str) -> str:
-    """產生互動式 Plotly treemap HTML 字串"""
-    labels = [r["name"] for r in rows]
-    values = [r["market_cap_base"] for r in rows]
-    colors = [_color_for_pct(r["change_pct"]) for r in rows]
+def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figure:
+    """同一張 Plotly Figure，輸出互動式 HTML 與靜態 PNG（kaleido）共用"""
+    rows_sorted = sorted(rows, key=lambda r: r["market_cap_base"], reverse=True)
+    labels = [r["name"] for r in rows_sorted]
+    values = [r["market_cap_base"] for r in rows_sorted]
+    colors = [_color_for_pct(r["change_pct"]) for r in rows_sorted]
     customdata = [
         [
             r["ticker"],
@@ -223,16 +187,16 @@ def generate_plotly_treemap(rows: List[dict], title: str, base_ccy: str) -> str:
             r["as_of"],
             _fmt_price(r["last_close"], r["currency"]),
         ]
-        for r in rows
+        for r in rows_sorted
     ]
     text = [
         f"<b>{r['name']}</b><br>{r['change_pct']:+.2f}%<br>{_fmt_price(r['last_close'], r['currency'])}<br>{_fmt_mcap(r['market_cap_base'], base_ccy)}"
-        for r in rows
+        for r in rows_sorted
     ]
     fig = go.Figure(
         go.Treemap(
             labels=labels,
-            parents=[""] * len(rows),
+            parents=[""] * len(rows_sorted),
             values=values,
             text=text,
             textinfo="text",
@@ -246,46 +210,20 @@ def generate_plotly_treemap(rows: List[dict], title: str, base_ccy: str) -> str:
                 "資料日：%{customdata[4]}<extra></extra>"
             ),
             marker=dict(colors=colors, line=dict(width=2, color="white")),
-            textfont=dict(size=18, color="white"),
+            textfont=dict(size=16, color="white", family=PLOTLY_FONT_FAMILY),
             tiling=dict(packing="squarify"),
         )
     )
     today = datetime.now().strftime("%Y-%m-%d")
     fig.update_layout(
-        title=dict(text=f"{title}（{today}）", font=dict(size=22)),
+        title=dict(text=f"{title}（{today}）", font=dict(size=22, family=PLOTLY_FONT_FAMILY)),
+        font=dict(family=PLOTLY_FONT_FAMILY),
         margin=dict(t=60, l=10, r=10, b=10),
         paper_bgcolor="#fafafa",
+        # 自動隱藏放不下的小 tile 文字（不出現截斷/重疊）
+        uniformtext=dict(minsize=11, mode="hide"),
     )
-    return fig.to_html(include_plotlyjs="cdn", full_html=True)
-
-
-def generate_static_png(rows: List[dict], title: str, base_ccy: str, out_path: Path) -> None:
-    """產生 matplotlib + squarify 靜態 PNG，給 Email 內嵌用"""
-    rows_sorted = sorted(rows, key=lambda r: r["market_cap_base"], reverse=True)
-    values = [r["market_cap_base"] for r in rows_sorted]
-    colors = [_color_for_pct(r["change_pct"]) for r in rows_sorted]
-    labels = [
-        f"{r['name']}\n{r['change_pct']:+.2f}%\n{_fmt_price(r['last_close'], r['currency'])}\n{_fmt_mcap(r['market_cap_base'], base_ccy)}"
-        for r in rows_sorted
-    ]
-
-    fig, ax = plt.subplots(figsize=(14, 8), dpi=120)
-    squarify.plot(
-        sizes=values,
-        label=labels,
-        color=colors,
-        text_kwargs={"color": "white", "fontsize": 11, "fontweight": "bold"},
-        pad=True,
-        ec="white",
-        linewidth=2,
-        ax=ax,
-    )
-    ax.axis("off")
-    today = datetime.now().strftime("%Y-%m-%d")
-    ax.set_title(f"{title}（{today}）", fontsize=16, fontweight="bold", pad=12)
-    fig.tight_layout()
-    fig.savefig(out_path, dpi=120, bbox_inches="tight", facecolor="white")
-    plt.close(fig)
+    return fig
 
 
 def build_summary(rows: List[dict], group_key: str, group_cfg: dict) -> dict:
@@ -384,8 +322,6 @@ def write_index_html(group_summaries: Dict[str, dict]) -> None:
 def main():
     print("讀取設定...")
     cfg = load_config()
-    _setup_font()
-
     summaries = {}
     for group_key, group_cfg in cfg["groups"].items():
         print(f"\n=== 處理 {group_key}：{group_cfg['title']} ===")
@@ -396,11 +332,18 @@ def main():
         base_ccy = group_cfg.get("base_currency", "USD")
         title = group_cfg["title"]
 
-        html = generate_plotly_treemap(rows, title, base_ccy)
-        (OUTPUT_DIR / f"{group_key}_chart.html").write_text(html, encoding="utf-8")
+        fig = build_treemap_figure(rows, title, base_ccy)
+
+        # 互動式 HTML（給 GitHub Pages + email 附件）
+        html_path = OUTPUT_DIR / f"{group_key}_chart.html"
+        html_path.write_text(
+            fig.to_html(include_plotlyjs="cdn", full_html=True), encoding="utf-8"
+        )
         print(f"  ✓ {group_key}_chart.html")
 
-        generate_static_png(rows, title, base_ccy, OUTPUT_DIR / f"{group_key}_preview.png")
+        # 靜態 PNG（給 email inline 顯示，透過 kaleido 直接從 Plotly figure 轉）
+        png_path = OUTPUT_DIR / f"{group_key}_preview.png"
+        fig.write_image(str(png_path), format="png", width=1400, height=900, scale=1.5)
         print(f"  ✓ {group_key}_preview.png")
 
         summary = build_summary(rows, group_key, group_cfg)
