@@ -2,8 +2,8 @@ name: Daily Market Cap Chart
 
 on:
   schedule:
-    # 06:30 UTC = 14:30 Asia/Taipei（台股 13:30 收盤，14:30 抓得到當日收盤資料）
-    - cron: '30 6 * * 1-5'
+    # 06:37 UTC = 14:37 Asia/Taipei（避開整點/半點熱門 tick 的 throttle 與 skip）
+    - cron: '37 6 * * 1-5'
   workflow_dispatch:
 
 jobs:
