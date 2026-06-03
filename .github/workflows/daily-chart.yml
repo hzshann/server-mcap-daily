@@ -5,6 +5,12 @@ on:
   # 主動打 workflow_dispatch API 觸發。此處只保留 dispatch 端點。
   workflow_dispatch:
 
+# 同時間兩次 dispatch 會在 commit/push 階段 race 出 1 個失敗（2026-06-03 已遇過）
+# 設 concurrency 讓後到的 run 排隊等前一個跑完。
+concurrency:
+  group: daily-chart
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
