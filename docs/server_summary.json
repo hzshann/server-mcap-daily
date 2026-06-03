@@ -3,8 +3,8 @@
   "group": "server",
   "title": "伺服器產業",
   "base_currency": "USD",
-  "total_market_cap": 20342904706702.883,
-  "total_change_pct": -1.6420864619396964,
+  "total_market_cap": 20342845395256.008,
+  "total_change_pct": -1.6420989981667027,
   "top_gainers": [
     {
       "name": "HPE",
@@ -146,7 +146,7 @@
       "last_close": 309.0,
       "currency": "TWD",
       "price_display": "NT$309.00",
-      "market_cap": 137583663335.16797
+      "market_cap": 137553039483.9961
     },
     {
       "name": "HPE",
@@ -166,7 +166,7 @@
       "last_close": 417.0,
       "currency": "TWD",
       "price_display": "NT$417.00",
-      "market_cap": 51112478927.381836
+      "market_cap": 51101102133.72949
     },
     {
       "name": "緯穎",
@@ -176,7 +176,7 @@
       "last_close": 5600.0,
       "currency": "TWD",
       "price_display": "NT$5,600.00",
-      "market_cap": 33094044539.51416
+      "market_cap": 33086678351.77002
     },
     {
       "name": "SuperMicro",
@@ -196,7 +196,7 @@
       "last_close": 194.0,
       "currency": "TWD",
       "price_display": "NT$194.00",
-      "market_cap": 19620309975.716064
+      "market_cap": 19615942818.758057
     },
     {
       "name": "英業達",
@@ -206,7 +206,7 @@
       "last_close": 85.4000015258789,
       "currency": "TWD",
       "price_display": "NT$85.40",
-      "market_cap": 9742435981.797607
+      "market_cap": 9740267476.450928
     },
     {
       "name": "技嘉",
@@ -216,7 +216,7 @@
       "last_close": 399.0,
       "currency": "TWD",
       "price_display": "NT$399.00",
-      "market_cap": 8499560530.287415
+      "market_cap": 8497668668.489319
     },
     {
       "name": "勤誠",
@@ -226,7 +226,7 @@
       "last_close": 1455.0,
       "currency": "TWD",
       "price_display": "NT$1,455.00",
-      "market_cap": 5798306907.7547
+      "market_cap": 5797016300.399963
     },
     {
       "name": "華擎",
@@ -236,7 +236,7 @@
       "last_close": 259.0,
       "currency": "TWD",
       "price_display": "NT$259.00",
-      "market_cap": 1017518665.2634964
+      "market_cap": 1017292182.4136124
     }
   ]
 }
