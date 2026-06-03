@@ -2,8 +2,8 @@ name: Daily Market Cap Chart
 
 on:
   schedule:
-    # 06:37 UTC = 14:37 Asia/Taipei（避開整點/半點熱門 tick 的 throttle 與 skip）
-    - cron: '37 6 * * 1-5'
+    # 07:09 UTC = 15:09 Asia/Taipei（測試：避開所有熱門 tick 看 schedule 會不會準時觸發）
+    - cron: '9 7 * * 1-5'
   workflow_dispatch:
 
 jobs:
