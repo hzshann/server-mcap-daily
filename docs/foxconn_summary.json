@@ -3,8 +3,8 @@
   "group": "foxconn",
   "title": "鴻海集團 + 轉投資",
   "base_currency": "TWD",
-  "total_market_cap": 13187090676798.791,
-  "total_change_pct": 1.6941999154166765,
+  "total_market_cap": 13186715422004.531,
+  "total_change_pct": 1.6986175907160082,
   "top_gainers": [
     {
       "name": "訊芯-KY",
@@ -17,10 +17,10 @@
     {
       "name": "鴻騰精密FIT",
       "ticker": "6088.HK",
-      "change_pct": 6.835721129217721,
-      "last_close": 9.6899995803833,
+      "change_pct": 7.056233350128657,
+      "last_close": 9.710000038146973,
       "currency": "HKD",
-      "price_display": "HK$9.69"
+      "price_display": "HK$9.71"
     },
     {
       "name": "正崴",
@@ -66,7 +66,7 @@
       "last_close": 81.05000305175781,
       "currency": "CNY",
       "price_display": "¥81.05",
-      "market_cap": 7482268775087.5625
+      "market_cap": 7481303980213.9375
     },
     {
       "name": "鴻海",
@@ -92,11 +92,11 @@
       "name": "鴻騰精密FIT",
       "ticker": "6088.HK",
       "category": "海外子公司",
-      "change_pct": 6.835721129217721,
-      "last_close": 9.6899995803833,
+      "change_pct": 7.056233350128657,
+      "last_close": 9.710000038146973,
       "currency": "HKD",
-      "price_display": "HK$9.69",
-      "market_cap": 277029999973.4375
+      "price_display": "HK$9.71",
+      "market_cap": 277532726281.5469
     },
     {
       "name": "帆宣",
@@ -126,7 +126,7 @@
       "last_close": 668.5,
       "currency": "JPY",
       "price_display": "¥668",
-      "market_cap": 84424963113.79102
+      "market_cap": 84511776885.04688
     },
     {
       "name": "訊芯-KY",
