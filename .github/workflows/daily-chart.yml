@@ -46,3 +46,17 @@ jobs:
             git commit -m "daily update $(date -u +%Y-%m-%d)"
             git push
           fi
+
+      # 等 GitHub Pages 部署 (~30-90s)，再打 n8n webhook 觸發寄信
+      # 失敗不擋 workflow，data 已經 commit
+      - name: Wait for Pages deploy
+        run: sleep 90
+
+      - name: Notify n8n webhook
+        if: success()
+        run: |
+          curl -X POST -fsS --max-time 30 \
+            -H "Content-Type: application/json" \
+            -d "{\"date\":\"$(date -u +%Y-%m-%d)\",\"run_id\":\"${{ github.run_id }}\"}" \
+            "https://hzshannn.zeabur.app/webhook/mcap-daily-trigger-7k3p" \
+            || echo "Webhook notify failed (non-fatal, data already pushed)"
