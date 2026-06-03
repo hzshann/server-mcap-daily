@@ -1,9 +1,8 @@
 name: Daily Market Cap Chart
 
 on:
-  schedule:
-    # 07:09 UTC = 15:09 Asia/Taipei（測試：避開所有熱門 tick 看 schedule 會不會準時觸發）
-    - cron: '9 7 * * 1-5'
+  # GitHub Actions schedule 不可靠（連續 3 天 skip），改由 n8n Schedule Trigger
+  # 主動打 workflow_dispatch API 觸發。此處只保留 dispatch 端點。
   workflow_dispatch:
 
 jobs:
