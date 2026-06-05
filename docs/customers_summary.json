@@ -3,8 +3,8 @@
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 23145856396869.273,
-  "total_change_pct": 1.6947193438908326,
+  "total_market_cap": 23145839660819.945,
+  "total_change_pct": 1.6947205196899235,
   "top_gainers": [
     {
       "name": "Meta",
@@ -146,7 +146,7 @@
       "last_close": 3559.0,
       "currency": "JPY",
       "price_display": "¥3,559",
-      "market_cap": 131053042170.71094
+      "market_cap": 131039114996.3125
     },
     {
       "name": "小米",
@@ -156,7 +156,7 @@
       "last_close": 27.799999237060547,
       "currency": "HKD",
       "price_display": "HK$27.80",
-      "market_cap": 91496526922.5625
+      "market_cap": 91493718047.63281
     },
     {
       "name": "HPE",
