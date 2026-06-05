@@ -3,8 +3,8 @@
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 23145850658131.68,
-  "total_change_pct": 1.694719634309165,
+  "total_market_cap": 23145856396869.273,
+  "total_change_pct": 1.6947193438908326,
   "top_gainers": [
     {
       "name": "Meta",
@@ -146,7 +146,7 @@
       "last_close": 3559.0,
       "currency": "JPY",
       "price_display": "¥3,559",
-      "market_cap": 131047303433.11719
+      "market_cap": 131053042170.71094
     },
     {
       "name": "小米",

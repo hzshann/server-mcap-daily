@@ -1,14 +1,14 @@
 {
   "date": "2026-06-05",
-  "generated_at": "2026-06-05T16:35:32",
+  "generated_at": "2026-06-05T08:42:13",
   "groups": {
     "server": {
       "date": "2026-06-05",
       "group": "server",
       "title": "伺服器產業",
       "base_currency": "USD",
-      "total_market_cap": 20196211192397.305,
-      "total_change_pct": 1.5736881561720568,
+      "total_market_cap": 20196219076671.766,
+      "total_change_pct": 1.5736865864702811,
       "top_gainers": [
         {
           "name": "Google",
@@ -150,7 +150,7 @@
           "last_close": 284.5,
           "currency": "TWD",
           "price_display": "NT$284.50",
-          "market_cap": 126594417005.91211
+          "market_cap": 126598438609.65527
         },
         {
           "name": "HPE",
@@ -170,7 +170,7 @@
           "last_close": 390.5,
           "currency": "TWD",
           "price_display": "NT$390.50",
-          "market_cap": 47833906314.17578
+          "market_cap": 47835425883.68945
         },
         {
           "name": "緯穎",
@@ -180,7 +180,7 @@
           "last_close": 5660.0,
           "currency": "TWD",
           "price_display": "NT$5,660.00",
-          "market_cap": 33427365167.04492
+          "market_cap": 33428427074.987305
         },
         {
           "name": "SuperMicro",
@@ -200,7 +200,7 @@
           "last_close": 171.0,
           "currency": "TWD",
           "price_display": "NT$171.00",
-          "market_cap": 17283200396.069824
+          "market_cap": 17283749442.26831
         },
         {
           "name": "英業達",
@@ -210,7 +210,7 @@
           "last_close": 76.80000305175781,
           "currency": "TWD",
           "price_display": "NT$76.80",
-          "market_cap": 8755779508.692627
+          "market_cap": 8756057658.997192
         },
         {
           "name": "技嘉",
@@ -220,7 +220,7 @@
           "last_close": 369.0,
           "currency": "TWD",
           "price_display": "NT$369.00",
-          "market_cap": 7855499813.773315
+          "market_cap": 7855749364.331726
         },
         {
           "name": "勤誠",
@@ -230,7 +230,7 @@
           "last_close": 1370.0,
           "currency": "TWD",
           "price_display": "NT$1,370.00",
-          "market_cap": 5456104585.082153
+          "market_cap": 5456277912.556946
         },
         {
           "name": "華擎",
@@ -240,7 +240,7 @@
           "last_close": 249.5,
           "currency": "TWD",
           "price_display": "NT$249.50",
-          "market_cap": 979573558.5541077
+          "market_cap": 979604677.2778473
         }
       ]
     },
@@ -249,8 +249,8 @@
       "group": "foxconn",
       "title": "鴻海集團 + 轉投資",
       "base_currency": "TWD",
-      "total_market_cap": 12138618196871.305,
-      "total_change_pct": -4.342676629465527,
+      "total_market_cap": 12139341315684.893,
+      "total_change_pct": -4.342757838245549,
       "top_gainers": [
         {
           "name": "臻鼎-KY",
@@ -312,7 +312,7 @@
           "last_close": 74.05999755859375,
           "currency": "CNY",
           "price_display": "¥74.06",
-          "market_cap": 6840795626809.875
+          "market_cap": 6841530750668.25
         },
         {
           "name": "鴻海",
@@ -342,7 +342,7 @@
           "last_close": 8.449999809265137,
           "currency": "HKD",
           "price_display": "HK$8.45",
-          "market_cap": 241717508252.98242
+          "market_cap": 241705503208.1953
         },
         {
           "name": "帆宣",
@@ -583,8 +583,8 @@
       "group": "customers",
       "title": "鴻海主要客戶",
       "base_currency": "USD",
-      "total_market_cap": 23145850658131.68,
-      "total_change_pct": 1.694719634309165,
+      "total_market_cap": 23145856396869.273,
+      "total_change_pct": 1.6947193438908326,
       "top_gainers": [
         {
           "name": "Meta",
@@ -726,7 +726,7 @@
           "last_close": 3559.0,
           "currency": "JPY",
           "price_display": "¥3,559",
-          "market_cap": 131047303433.11719
+          "market_cap": 131053042170.71094
         },
         {
           "name": "小米",
