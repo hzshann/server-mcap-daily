@@ -53,6 +53,8 @@ def _fetch_one(ticker: str, retries: int = 3) -> Optional[dict]:
         try:
             t = yf.Ticker(ticker)
             hist = t.history(period="5d", auto_adjust=False)
+            # yfinance 偶爾在休市/停牌日回傳 NaN Close，會讓 change_pct 變 NaN 後續崩
+            hist = hist.dropna(subset=["Close"])
             if hist.empty or len(hist) < 2:
                 print(f"  ⚠️  {ticker} history 資料不足", file=sys.stderr)
                 return None
