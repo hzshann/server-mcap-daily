@@ -54,3 +54,34 @@ groups:
       - { ticker: 5243.TW,    name: 乙盛-KY,    category: 轉投資 }
       - { ticker: 6451.TW,    name: 訊芯-KY,    category: 轉投資 }
       - { ticker: 6753.T,     name: Sharp夏普,  category: 轉投資 }
+
+  peers:
+    title: "鴻海同業"
+    base_currency: TWD
+    companies:
+      - { ticker: 2317.TW,  name: 鴻海,    category: ODM 龍頭 }
+      - { ticker: 2382.TW,  name: 廣達,    category: 筆電/伺服器 ODM }
+      - { ticker: 3231.TW,  name: 緯創,    category: 筆電/伺服器 ODM }
+      - { ticker: 6669.TW,  name: 緯穎,    category: 雲端伺服器 }
+      - { ticker: 2356.TW,  name: 英業達,  category: 伺服器/筆電 ODM }
+      - { ticker: 4938.TW,  name: 和碩,    category: 消費電子 EMS }
+      - { ticker: 2324.TW,  name: 仁寶,    category: 筆電 ODM }
+
+  customers:
+    title: "鴻海主要客戶"
+    base_currency: USD
+    companies:
+      # 消費電子（華為未上市跳過）
+      - { ticker: AAPL,    name: Apple,     category: 消費電子 }
+      - { ticker: 6758.T,  name: Sony,      category: 消費電子 }
+      - { ticker: 1810.HK, name: 小米,      category: 消費電子 }
+      # 雲端 / 軟體
+      - { ticker: AMZN,    name: Amazon,    category: 雲端 }
+      - { ticker: MSFT,    name: Microsoft, category: 雲端 }
+      - { ticker: GOOGL,   name: Google,    category: 雲端 }
+      - { ticker: ORCL,    name: Oracle,    category: 雲端 }
+      - { ticker: META,    name: Meta,      category: 雲端 }
+      # 晶片 / 伺服器 OEM
+      - { ticker: NVDA,    name: NVIDIA,    category: 芯片 }
+      - { ticker: DELL,    name: Dell,      category: 伺服器 OEM }
+      - { ticker: HPE,     name: HPE,       category: 伺服器 OEM }
