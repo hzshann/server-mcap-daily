@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-09",
+  "date": "2026-06-10",
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 22247707028154.383,
-  "total_change_pct": -0.5821151485893503,
+  "total_market_cap": 21974271925599.863,
+  "total_change_pct": -0.5863861467654483,
   "top_gainers": [
     {
       "name": "NVIDIA",
@@ -33,6 +33,14 @@
   ],
   "top_losers": [
     {
+      "name": "小米",
+      "ticker": "1810.HK",
+      "change_pct": -3.2352979537936393,
+      "last_close": 26.31999969482422,
+      "currency": "HKD",
+      "price_display": "HK$26.32"
+    },
+    {
       "name": "Apple",
       "ticker": "AAPL",
       "change_pct": -1.8871568497684967,
@@ -43,18 +51,10 @@
     {
       "name": "Sony",
       "ticker": "6758.T",
-      "change_pct": -1.8529076396807298,
-      "last_close": 3443.0,
+      "change_pct": -1.6845774034272436,
+      "last_close": 3385.0,
       "currency": "JPY",
-      "price_display": "¥3,443"
-    },
-    {
-      "name": "Google",
-      "ticker": "GOOGL",
-      "change_pct": -1.4164386177498807,
-      "last_close": 363.30999755859375,
-      "currency": "USD",
-      "price_display": "$363.31"
+      "price_display": "¥3,385"
     }
   ],
   "all": [
@@ -66,7 +66,7 @@
       "last_close": 208.63999938964844,
       "currency": "USD",
       "price_display": "$208.64",
-      "market_cap": 5053469425664.0
+      "market_cap": 5042570002432.0
     },
     {
       "name": "Google",
@@ -76,7 +76,7 @@
       "last_close": 363.30999755859375,
       "currency": "USD",
       "price_display": "$363.31",
-      "market_cap": 4430541881344.0
+      "market_cap": 4442127073280.0
     },
     {
       "name": "Apple",
@@ -86,7 +86,7 @@
       "last_close": 301.5400085449219,
       "currency": "USD",
       "price_display": "$301.54",
-      "market_cap": 4428825362432.0
+      "market_cap": 4267410980864.0
     },
     {
       "name": "Microsoft",
@@ -96,7 +96,7 @@
       "last_close": 411.739990234375,
       "currency": "USD",
       "price_display": "$411.74",
-      "market_cap": 3058583732224.0
+      "market_cap": 2996704903168.0
     },
     {
       "name": "Amazon",
@@ -106,7 +106,7 @@
       "last_close": 245.22000122070312,
       "currency": "USD",
       "price_display": "$245.22",
-      "market_cap": 2637858340864.0
+      "market_cap": 2626778562560.0
     },
     {
       "name": "Meta",
@@ -116,7 +116,7 @@
       "last_close": 585.3900146484375,
       "currency": "USD",
       "price_display": "$585.39",
-      "market_cap": 1485967589376.0
+      "market_cap": 1483936890880.0
     },
     {
       "name": "Oracle",
@@ -126,7 +126,7 @@
       "last_close": 211.82000732421875,
       "currency": "USD",
       "price_display": "$211.82",
-      "market_cap": 609204109312.0
+      "market_cap": 591919054848.0
     },
     {
       "name": "Dell",
@@ -136,27 +136,27 @@
       "last_close": 400.7699890136719,
       "currency": "USD",
       "price_display": "$400.77",
-      "market_cap": 260327456768.0
+      "market_cap": 247992172544.0
     },
     {
       "name": "Sony",
       "ticker": "6758.T",
       "category": "消費電子",
-      "change_pct": -1.8529076396807298,
-      "last_close": 3443.0,
+      "change_pct": -1.6845774034272436,
+      "last_close": 3385.0,
       "currency": "JPY",
-      "price_display": "¥3,443",
-      "market_cap": 126606622783.79883
+      "price_display": "¥3,385",
+      "market_cap": 124309276953.64062
     },
     {
       "name": "小米",
       "ticker": "1810.HK",
       "category": "消費電子",
-      "change_pct": 0.21914307936500196,
-      "last_close": 27.440000534057617,
+      "change_pct": -3.2352979537936393,
+      "last_close": 26.31999969482422,
       "currency": "HKD",
-      "price_display": "HK$27.44",
-      "market_cap": 90284481146.58398
+      "price_display": "HK$26.32",
+      "market_cap": 86603703366.22266
     },
     {
       "name": "HPE",
@@ -166,7 +166,7 @@
       "last_close": 49.869998931884766,
       "currency": "USD",
       "price_display": "$49.87",
-      "market_cap": 66038026240.0
+      "market_cap": 63919304704.0
     }
   ]
 }
