@@ -66,11 +66,19 @@ def _fetch_one(ticker: str, retries: int = 3) -> Optional[dict]:
             if not market_cap and shares:
                 market_cap = float(shares) * last_close
             currency = info.get("currency") or "USD"
+            change_pct = (last_close - prev_close) / prev_close * 100
+            # 台股單日漲跌停 ±10%，超出視為 yfinance 資料源錯誤（曾發生 6669.TW 因前日 close 異常變 +184%）
+            if ticker.endswith(".TW") and abs(change_pct) > 10:
+                print(
+                    f"  ⚠️  {ticker} change_pct={change_pct:+.1f}% 超出台股 ±10% 漲跌停 → 標 N/A（last={last_close} prev={prev_close}）",
+                    file=sys.stderr,
+                )
+                change_pct = None
             return {
                 "ticker": ticker,
                 "last_close": last_close,
                 "prev_close": prev_close,
-                "change_pct": (last_close - prev_close) / prev_close * 100,
+                "change_pct": change_pct,
                 "market_cap_native": float(market_cap) if market_cap else 0.0,
                 "currency": currency,
                 "as_of": hist.index[-1].strftime("%Y-%m-%d"),
@@ -134,8 +142,10 @@ def fetch_group(group_cfg: dict) -> List[dict]:
     return rows
 
 
-def _color_for_pct(pct: float) -> str:
-    """漲跌幅 → 顏色（紅漲綠跌，飽和度依絕對值）"""
+def _color_for_pct(pct) -> str:
+    """漲跌幅 → 顏色（紅漲綠跌，飽和度依絕對值）；None 視為資料異常，回中性灰"""
+    if pct is None:
+        return "#a0a0a0"  # N/A 灰
     if pct == 0:
         return COLOR_FLAT
     intensity = min(abs(pct) / COLOR_RANGE_PCT, 1.0)
@@ -223,9 +233,10 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
         )
 
         # 文字：四行（公司、漲跌、收盤、市值）；$ 都要 escape 否則 Plotly 會誤判為 LaTeX
+        pct_str = "N/A" if r["change_pct"] is None else f"{r['change_pct']:+.2f}%"
         text = (
             f"<b>{r['name']}</b><br>"
-            f"{r['change_pct']:+.2f}%<br>"
+            f"{pct_str}<br>"
             f"{_esc_dollar(_fmt_price(r['last_close'], r['currency']))}<br>"
             f"{_esc_dollar(_fmt_mcap(r['market_cap_base'], base_ccy))}"
         )
@@ -246,7 +257,7 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
         hover_text.append(
             f"<b>{r['name']}</b> ({r['ticker']})<br>"
             f"分類：{r['category']}<br>"
-            f"漲跌：{r['change_pct']:+.2f}%<br>"
+            f"漲跌：{pct_str}<br>"
             f"收盤：{_esc_dollar(_fmt_price(r['last_close'], r['currency']))}<br>"
             f"市值：{_esc_dollar(_fmt_mcap(r['market_cap_base'], base_ccy))}<br>"
             f"資料日：{r['as_of']}"
@@ -284,10 +295,17 @@ def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figu
 def build_summary(rows: List[dict], group_key: str, group_cfg: dict) -> dict:
     base_ccy = group_cfg.get("base_currency", "USD")
     today = datetime.now().strftime("%Y-%m-%d")
+    # total_change 只算 change_pct 不是 None 的公司（N/A 公司被排除）
+    valid_rows = [r for r in rows if r["change_pct"] is not None]
+    total_mcap_valid = sum(r["market_cap_base"] for r in valid_rows)
+    prev_total = sum(
+        r["market_cap_base"] * (r["prev_close"] / r["last_close"])
+        for r in valid_rows if r["last_close"] > 0
+    )
+    total_change = (total_mcap_valid - prev_total) / prev_total * 100 if prev_total > 0 else 0
+    # total_market_cap 仍含全部公司（圖上方塊大小用得到），但 total_change_pct 不算 N/A
     total_mcap = sum(r["market_cap_base"] for r in rows)
-    prev_total = sum(r["market_cap_base"] * (r["prev_close"] / r["last_close"]) for r in rows if r["last_close"] > 0)
-    total_change = (total_mcap - prev_total) / prev_total * 100 if prev_total > 0 else 0
-    sorted_by_pct = sorted(rows, key=lambda r: r["change_pct"], reverse=True)
+    sorted_by_pct = sorted(valid_rows, key=lambda r: r["change_pct"], reverse=True)
     return {
         "date": today,
         "group": group_key,
