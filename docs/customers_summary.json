@@ -1,10 +1,10 @@
 {
-  "date": "2026-06-19",
+  "date": "2026-06-22",
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 21937142468615.336,
-  "total_change_pct": 1.473336725080001,
+  "total_market_cap": 21935182399286.008,
+  "total_change_pct": 1.5013227172154733,
   "top_gainers": [
     {
       "name": "NVIDIA",
@@ -33,20 +33,12 @@
   ],
   "top_losers": [
     {
-      "name": "Sony",
-      "ticker": "6758.T",
-      "change_pct": -3.3846153846153846,
-      "last_close": 3140.0,
-      "currency": "JPY",
-      "price_display": "¥3,140"
-    },
-    {
       "name": "小米",
       "ticker": "1810.HK",
-      "change_pct": -3.3044852480990103,
-      "last_close": 24.579999923706055,
+      "change_pct": -3.0105767836251096,
+      "last_close": 23.84000015258789,
       "currency": "HKD",
-      "price_display": "HK$24.58"
+      "price_display": "HK$23.84"
     },
     {
       "name": "Dell",
@@ -55,6 +47,14 @@
       "last_close": 409.5,
       "currency": "USD",
       "price_display": "$409.50"
+    },
+    {
+      "name": "HPE",
+      "ticker": "HPE",
+      "change_pct": -1.639006022868714,
+      "last_close": 47.40999984741211,
+      "currency": "USD",
+      "price_display": "$47.41"
     }
   ],
   "all": [
@@ -136,27 +136,27 @@
       "last_close": 409.5,
       "currency": "USD",
       "price_display": "$409.50",
-      "market_cap": 265400205312.0
+      "market_cap": 264595308544.0
     },
     {
       "name": "Sony",
       "ticker": "6758.T",
       "category": "消費電子",
-      "change_pct": -3.3846153846153846,
-      "last_close": 3140.0,
+      "change_pct": 1.3694267515923568,
+      "last_close": 3183.0,
       "currency": "JPY",
-      "price_display": "¥3,140",
-      "market_cap": 114629326132.47363
+      "price_display": "¥3,183",
+      "market_cap": 115956897915.62695
     },
     {
       "name": "小米",
       "ticker": "1810.HK",
       "category": "消費電子",
-      "change_pct": -3.3044852480990103,
-      "last_close": 24.579999923706055,
+      "change_pct": -3.0105767836251096,
+      "last_close": 23.84000015258789,
       "currency": "HKD",
-      "price_display": "HK$24.58",
-      "market_cap": 80784906962.86328
+      "price_display": "HK$23.84",
+      "market_cap": 78302162618.3789
     },
     {
       "name": "HPE",
