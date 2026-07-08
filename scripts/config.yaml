@@ -16,7 +16,7 @@ groups:
       - { ticker: NVDA,     name: NVIDIA,    category: 美系芯片 }
       - { ticker: AMD,      name: AMD,       category: 美系芯片 }
       # 晶圓代工
-      - { ticker: TSM,      name: 台積電,    category: 晶圓代工 }
+      - { ticker: 2330.TW,  name: 台積電,    category: 晶圓代工 }
       # 美系伺服器 OEM
       - { ticker: DELL,     name: Dell,      category: 美系伺服器 }
       - { ticker: HPE,      name: HPE,       category: 美系伺服器 }
@@ -29,7 +29,6 @@ groups:
       # 台廠零組件
       - { ticker: 2356.TW,  name: 英業達,    category: 台廠零組件 }
       - { ticker: 2376.TW,  name: 技嘉,      category: 台廠零組件 }
-      - { ticker: 3515.TW,  name: 華擎,      category: 台廠零組件 }
       - { ticker: 8210.TW,  name: 勤誠,      category: 台廠零組件 }
 
   foxconn:
