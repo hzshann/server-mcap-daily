@@ -1,19 +1,11 @@
 {
-  "date": "2026-07-09",
+  "date": "2026-07-10",
   "group": "foxconn",
   "title": "鴻海集團 + 轉投資",
   "base_currency": "TWD",
-  "total_market_cap": 11208521074926.986,
-  "total_change_pct": 3.244561529134282,
+  "total_market_cap": 10952653912910.816,
+  "total_change_pct": -2.155329141828289,
   "top_gainers": [
-    {
-      "name": "工業富聯FII",
-      "ticker": "601138.SS",
-      "change_pct": 5.287074308173669,
-      "last_close": 69.5,
-      "currency": "CNY",
-      "price_display": "¥69.50"
-    },
     {
       "name": "臻鼎-KY",
       "ticker": "4958.TW",
@@ -23,12 +15,20 @@
       "price_display": "NT$588.00"
     },
     {
-      "name": "鴻騰精密FIT",
-      "ticker": "6088.HK",
-      "change_pct": 3.079417420924634,
-      "last_close": 6.360000133514404,
-      "currency": "HKD",
-      "price_display": "HK$6.36"
+      "name": "帆宣",
+      "ticker": "6196.TW",
+      "change_pct": 0.5494505494505495,
+      "last_close": 549.0,
+      "currency": "TWD",
+      "price_display": "NT$549.00"
+    },
+    {
+      "name": "Sharp夏普",
+      "ticker": "6753.T",
+      "change_pct": 0.18544463797030133,
+      "last_close": 648.2999877929688,
+      "currency": "JPY",
+      "price_display": "¥648"
     }
   ],
   "top_losers": [
@@ -41,20 +41,20 @@
       "price_display": "NT$325.00"
     },
     {
-      "name": "樺漢",
-      "ticker": "6414.TW",
-      "change_pct": -2.4752475247524752,
-      "last_close": 394.0,
-      "currency": "TWD",
-      "price_display": "NT$394.00"
+      "name": "工業富聯FII",
+      "ticker": "601138.SS",
+      "change_pct": -3.883211557089993,
+      "last_close": 66.83000183105469,
+      "currency": "CNY",
+      "price_display": "¥66.83"
     },
     {
-      "name": "鴻準",
-      "ticker": "2354.TW",
-      "change_pct": -1.554406739482801,
-      "last_close": 57.0,
-      "currency": "TWD",
-      "price_display": "NT$57.00"
+      "name": "鴻騰精密FIT",
+      "ticker": "6088.HK",
+      "change_pct": -3.1298875343347015,
+      "last_close": 6.190000057220459,
+      "currency": "HKD",
+      "price_display": "HK$6.19"
     }
   ],
   "all": [
@@ -62,11 +62,11 @@
       "name": "工業富聯FII",
       "ticker": "601138.SS",
       "category": "海外子公司",
-      "change_pct": 5.287074308173669,
-      "last_close": 69.5,
+      "change_pct": -3.883211557089993,
+      "last_close": 66.83000183105469,
       "currency": "CNY",
-      "price_display": "¥69.50",
-      "market_cap": 6532274234358.6875
+      "price_display": "¥66.83",
+      "market_cap": 6281454738810.0
     },
     {
       "name": "鴻海",
@@ -92,11 +92,11 @@
       "name": "鴻騰精密FIT",
       "ticker": "6088.HK",
       "category": "海外子公司",
-      "change_pct": 3.079417420924634,
-      "last_close": 6.360000133514404,
+      "change_pct": -3.1298875343347015,
+      "last_close": 6.190000057220459,
       "currency": "HKD",
-      "price_display": "HK$6.36",
-      "market_cap": 185699019274.54688
+      "price_display": "HK$6.19",
+      "market_cap": 180330412558.4336
     },
     {
       "name": "帆宣",
@@ -112,11 +112,11 @@
       "name": "Sharp夏普",
       "ticker": "6753.T",
       "category": "轉投資",
-      "change_pct": 0.5907022952084509,
-      "last_close": 647.0999755859375,
+      "change_pct": 0.18544463797030133,
+      "last_close": 648.2999877929688,
       "currency": "JPY",
-      "price_display": "¥647",
-      "market_cap": 82268571373.75195
+      "price_display": "¥648",
+      "market_cap": 82589511622.38379
     },
     {
       "name": "鴻準",
