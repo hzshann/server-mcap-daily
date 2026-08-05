@@ -135,6 +135,13 @@ def fetch_group(group_cfg: dict) -> List[dict]:
         # 匯率轉換成 base currency
         rate = get_fx_rate(data["currency"], base_ccy)
         data["market_cap_base"] = data["market_cap_native"] * rate
+        # market_cap 為 0 會讓 squarify tile 面積 0 → ZeroDivisionError；跳過該家
+        if data["market_cap_base"] <= 0:
+            print(
+                f"  ⚠️  {c['ticker']} market_cap 為 0（yfinance info 缺 marketCap+sharesOutstanding）→ 跳過",
+                file=sys.stderr,
+            )
+            continue
         data["base_currency"] = base_ccy
         data["name"] = c["name"]
         data["category"] = c["category"]
@@ -205,6 +212,8 @@ def _font_size_for_tile(dx: float, dy: float) -> float:
 
 def build_treemap_figure(rows: List[dict], title: str, base_ccy: str) -> go.Figure:
     """用 squarify 自己算 layout + add_shape + add_annotation，達成每個 tile 自有字體大小"""
+    # 再一層防禦：squarify 對 0 值會炸 ZeroDivisionError
+    rows = [r for r in rows if r.get("market_cap_base", 0) > 0]
     rows_sorted = sorted(rows, key=lambda r: r["market_cap_base"], reverse=True)
     values = [r["market_cap_base"] for r in rows_sorted]
 
