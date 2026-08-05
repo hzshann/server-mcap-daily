@@ -3,24 +3,24 @@
   "group": "foxconn",
   "title": "鴻海集團 + 轉投資",
   "base_currency": "TWD",
-  "total_market_cap": 11076785307449.117,
-  "total_change_pct": 7.490091169043822,
+  "total_market_cap": 11078398674348.445,
+  "total_change_pct": 7.482772491393189,
   "top_gainers": [
     {
       "name": "鴻騰精密FIT",
       "ticker": "6088.HK",
-      "change_pct": 14.502366874977458,
-      "last_close": 6.039999961853027,
+      "change_pct": 14.59715577261765,
+      "last_close": 6.045000076293945,
       "currency": "HKD",
-      "price_display": "HK$6.04"
+      "price_display": "HK$6.05"
     },
     {
       "name": "工業富聯FII",
       "ticker": "601138.SS",
-      "change_pct": 9.994990544413884,
-      "last_close": 65.91999816894531,
+      "change_pct": 9.978313576643078,
+      "last_close": 65.91000366210938,
       "currency": "CNY",
-      "price_display": "¥65.92"
+      "price_display": "¥65.91"
     },
     {
       "name": "訊芯-KY",
@@ -62,11 +62,11 @@
       "name": "工業富聯FII",
       "ticker": "601138.SS",
       "category": "海外子公司",
-      "change_pct": 9.994990544413884,
-      "last_close": 65.91999816894531,
+      "change_pct": 9.978313576643078,
+      "last_close": 65.91000366210938,
       "currency": "CNY",
-      "price_display": "¥65.92",
-      "market_cap": 6256488772337.3125
+      "price_display": "¥65.91",
+      "market_cap": 6257501718292.5
     },
     {
       "name": "鴻海",
@@ -92,11 +92,11 @@
       "name": "鴻騰精密FIT",
       "ticker": "6088.HK",
       "category": "海外子公司",
-      "change_pct": 14.502366874977458,
-      "last_close": 6.039999961853027,
+      "change_pct": 14.59715577261765,
+      "last_close": 6.045000076293945,
       "currency": "HKD",
-      "price_display": "HK$6.04",
-      "market_cap": 176712147412.58203
+      "price_display": "HK$6.05",
+      "market_cap": 176918606884.72266
     },
     {
       "name": "帆宣",
@@ -136,7 +136,7 @@
       "last_close": 469.0,
       "currency": "TWD",
       "price_display": "NT$469.00",
-      "market_cap": 68026761216.0
+      "market_cap": 68420722688.0
     },
     {
       "name": "訊芯-KY",

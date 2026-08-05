@@ -3,8 +3,8 @@
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 23431388270423.51,
-  "total_change_pct": 1.149141529140396,
+  "total_market_cap": 23431386646634.96,
+  "total_change_pct": 1.1491416710772904,
   "top_gainers": [
     {
       "name": "Dell",
@@ -156,7 +156,7 @@
       "last_close": 27.719999313354492,
       "currency": "HKD",
       "price_display": "HK$27.72",
-      "market_cap": 90809271005.36035
+      "market_cap": 90807647216.8086
     },
     {
       "name": "HPE",
