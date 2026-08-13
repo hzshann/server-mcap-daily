@@ -1,60 +1,60 @@
 {
-  "date": "2026-08-12",
+  "date": "2026-08-13",
   "group": "peers",
   "title": "鴻海同業",
   "base_currency": "TWD",
-  "total_market_cap": 9751858151424.0,
-  "total_change_pct": 2.4765935296315504,
+  "total_market_cap": 9679859007488.0,
+  "total_change_pct": -0.7383131383397611,
   "top_gainers": [
     {
-      "name": "仁寶",
-      "ticker": "2324.TW",
-      "change_pct": 9.917361885624864,
-      "last_close": 39.900001525878906,
+      "name": "和碩",
+      "ticker": "4938.TW",
+      "change_pct": 3.7199140799972885,
+      "last_close": 94.80000305175781,
       "currency": "TWD",
-      "price_display": "NT$39.90"
+      "price_display": "NT$94.80"
     },
-    {
-      "name": "英業達",
-      "ticker": "2356.TW",
-      "change_pct": 5.990785894456289,
-      "last_close": 69.0,
-      "currency": "TWD",
-      "price_display": "NT$69.00"
-    },
-    {
-      "name": "廣達",
-      "ticker": "2382.TW",
-      "change_pct": 3.1695721077654517,
-      "last_close": 325.5,
-      "currency": "TWD",
-      "price_display": "NT$325.50"
-    }
-  ],
-  "top_losers": [
     {
       "name": "緯創",
       "ticker": "3231.TW",
-      "change_pct": 1.3089005235602094,
-      "last_close": 193.5,
+      "change_pct": 1.8087855297157622,
+      "last_close": 197.0,
       "currency": "TWD",
-      "price_display": "NT$193.50"
+      "price_display": "NT$197.00"
     },
     {
       "name": "緯穎",
       "ticker": "6669.TW",
-      "change_pct": 1.6020236087689714,
-      "last_close": 6025.0,
+      "change_pct": 0.7468879668049793,
+      "last_close": 6070.0,
       "currency": "TWD",
-      "price_display": "NT$6,025.00"
-    },
+      "price_display": "NT$6,070.00"
+    }
+  ],
+  "top_losers": [
     {
       "name": "鴻海",
       "ticker": "2317.TW",
-      "change_pct": 2.6615969581749046,
-      "last_close": 270.0,
+      "change_pct": -2.9629629629629632,
+      "last_close": 262.0,
       "currency": "TWD",
-      "price_display": "NT$270.00"
+      "price_display": "NT$262.00"
+    },
+    {
+      "name": "仁寶",
+      "ticker": "2324.TW",
+      "change_pct": -1.5037650773752513,
+      "last_close": 39.29999923706055,
+      "currency": "TWD",
+      "price_display": "NT$39.30"
+    },
+    {
+      "name": "英業達",
+      "ticker": "2356.TW",
+      "change_pct": -0.2898506496263587,
+      "last_close": 68.80000305175781,
+      "currency": "TWD",
+      "price_display": "NT$68.80"
     }
   ],
   "all": [
@@ -62,71 +62,71 @@
       "name": "鴻海",
       "ticker": "2317.TW",
       "category": "ODM 龍頭",
-      "change_pct": 2.6615969581749046,
-      "last_close": 270.0,
+      "change_pct": -2.9629629629629632,
+      "last_close": 262.0,
       "currency": "TWD",
-      "price_display": "NT$270.00",
-      "market_cap": 3780518346752.0
+      "price_display": "NT$262.00",
+      "market_cap": 3668503166976.0
     },
     {
       "name": "緯穎",
       "ticker": "6669.TW",
       "category": "雲端伺服器",
-      "change_pct": 1.6020236087689714,
-      "last_close": 6025.0,
+      "change_pct": 0.7468879668049793,
+      "last_close": 6070.0,
       "currency": "TWD",
-      "price_display": "NT$6,025.00",
-      "market_cap": 3359072321536.0
+      "price_display": "NT$6,070.00",
+      "market_cap": 3384160813056.0
     },
     {
       "name": "廣達",
       "ticker": "2382.TW",
       "category": "筆電/伺服器 ODM",
-      "change_pct": 3.1695721077654517,
-      "last_close": 325.5,
+      "change_pct": -0.15360983102918588,
+      "last_close": 325.0,
       "currency": "TWD",
-      "price_display": "NT$325.50",
-      "market_cap": 1334393307136.0
+      "price_display": "NT$325.00",
+      "market_cap": 1332343472128.0
     },
     {
       "name": "緯創",
       "ticker": "3231.TW",
       "category": "筆電/伺服器 ODM",
-      "change_pct": 1.3089005235602094,
-      "last_close": 193.5,
+      "change_pct": 1.8087855297157622,
+      "last_close": 197.0,
       "currency": "TWD",
-      "price_display": "NT$193.50",
-      "market_cap": 615340113920.0
-    },
-    {
-      "name": "英業達",
-      "ticker": "2356.TW",
-      "category": "伺服器/筆電 ODM",
-      "change_pct": 5.990785894456289,
-      "last_close": 69.0,
-      "currency": "TWD",
-      "price_display": "NT$69.00",
-      "market_cap": 247535763456.0
+      "price_display": "NT$197.00",
+      "market_cap": 626470289408.0
     },
     {
       "name": "和碩",
       "ticker": "4938.TW",
       "category": "消費電子 EMS",
-      "change_pct": 2.696630927953827,
-      "last_close": 91.4000015258789,
+      "change_pct": 3.7199140799972885,
+      "last_close": 94.80000305175781,
       "currency": "TWD",
-      "price_display": "NT$91.40",
-      "market_cap": 245138833408.0
+      "price_display": "NT$94.80",
+      "market_cap": 254257790976.0
+    },
+    {
+      "name": "英業達",
+      "ticker": "2356.TW",
+      "category": "伺服器/筆電 ODM",
+      "change_pct": -0.2898506496263587,
+      "last_close": 68.80000305175781,
+      "currency": "TWD",
+      "price_display": "NT$68.80",
+      "market_cap": 246818291712.0
     },
     {
       "name": "仁寶",
       "ticker": "2324.TW",
       "category": "筆電 ODM",
-      "change_pct": 9.917361885624864,
-      "last_close": 39.900001525878906,
+      "change_pct": -1.5037650773752513,
+      "last_close": 39.29999923706055,
       "currency": "TWD",
-      "price_display": "NT$39.90",
-      "market_cap": 169859465216.0
+      "price_display": "NT$39.30",
+      "market_cap": 167305183232.0
     }
   ]
 }
