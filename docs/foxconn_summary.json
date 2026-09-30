@@ -1,60 +1,60 @@
 {
-  "date": "2026-09-29",
+  "date": "2026-09-30",
   "group": "foxconn",
   "title": "鴻海集團 + 轉投資",
   "base_currency": "TWD",
-  "total_market_cap": 10248245641434.816,
-  "total_change_pct": -0.1474351720638993,
+  "total_market_cap": 10239425734645.057,
+  "total_change_pct": 0.03756046799651282,
   "top_gainers": [
-    {
-      "name": "樺漢",
-      "ticker": "6414.TW",
-      "change_pct": 6.417112299465241,
-      "last_close": 398.0,
-      "currency": "TWD",
-      "price_display": "NT$398.00"
-    },
-    {
-      "name": "臻鼎-KY",
-      "ticker": "4958.TW",
-      "change_pct": 4.837013669821241,
-      "last_close": 498.5,
-      "currency": "TWD",
-      "price_display": "NT$498.50"
-    },
-    {
-      "name": "訊芯-KY",
-      "ticker": "6451.TW",
-      "change_pct": 1.0922330097087378,
-      "last_close": 416.5,
-      "currency": "TWD",
-      "price_display": "NT$416.50"
-    }
-  ],
-  "top_losers": [
     {
       "name": "帆宣",
       "ticker": "6196.TW",
-      "change_pct": -3.7168141592920354,
-      "last_close": 544.0,
+      "change_pct": 7.536764705882352,
+      "last_close": 585.0,
       "currency": "TWD",
-      "price_display": "NT$544.00"
+      "price_display": "NT$585.00"
+    },
+    {
+      "name": "乙盛-KY",
+      "ticker": "5243.TW",
+      "change_pct": 3.156711553656149,
+      "last_close": 91.5,
+      "currency": "TWD",
+      "price_display": "NT$91.50"
     },
     {
       "name": "正崴",
       "ticker": "2392.TW",
-      "change_pct": -2.389486347576268,
-      "last_close": 40.849998474121094,
+      "change_pct": 1.835985380697463,
+      "last_close": 41.599998474121094,
       "currency": "TWD",
-      "price_display": "NT$40.85"
+      "price_display": "NT$41.60"
+    }
+  ],
+  "top_losers": [
+    {
+      "name": "樺漢",
+      "ticker": "6414.TW",
+      "change_pct": -1.507537688442211,
+      "last_close": 392.0,
+      "currency": "TWD",
+      "price_display": "NT$392.00"
     },
     {
-      "name": "鴻準",
-      "ticker": "2354.TW",
-      "change_pct": -1.213965149065515,
-      "last_close": 65.0999984741211,
+      "name": "工業富聯FII",
+      "ticker": "601138.SS",
+      "change_pct": -0.5648716650128911,
+      "last_close": 58.09000015258789,
+      "currency": "CNY",
+      "price_display": "¥58.09"
+    },
+    {
+      "name": "富鼎",
+      "ticker": "8261.TW",
+      "change_pct": -0.28328611898017,
+      "last_close": 176.0,
       "currency": "TWD",
-      "price_display": "NT$65.10"
+      "price_display": "NT$176.00"
     }
   ],
   "all": [
@@ -62,97 +62,97 @@
       "name": "工業富聯FII",
       "ticker": "601138.SS",
       "category": "海外子公司",
-      "change_pct": -0.6788827624106505,
-      "last_close": 58.52000045776367,
+      "change_pct": -0.5648716650128911,
+      "last_close": 58.09000015258789,
       "currency": "CNY",
-      "price_display": "¥58.52",
-      "market_cap": 5529068630100.0
+      "price_display": "¥58.09",
+      "market_cap": 5486366068662.8125
     },
     {
       "name": "鴻海",
       "ticker": "2317.TW",
       "category": "母公司",
-      "change_pct": 0.0,
-      "last_close": 250.5,
+      "change_pct": 0.39920159680638717,
+      "last_close": 251.5,
       "currency": "TWD",
-      "price_display": "NT$250.50",
-      "market_cap": 3509923872768.0
+      "price_display": "NT$251.50",
+      "market_cap": 3523935731712.0
     },
     {
       "name": "臻鼎-KY",
       "ticker": "4958.TW",
       "category": "直系子公司",
-      "change_pct": 4.837013669821241,
-      "last_close": 498.5,
+      "change_pct": 1.7051153460381143,
+      "last_close": 507.0,
       "currency": "TWD",
-      "price_display": "NT$498.50",
-      "market_cap": 552568815616.0
+      "price_display": "NT$507.00",
+      "market_cap": 561990729728.0
     },
     {
       "name": "鴻騰精密FIT",
       "ticker": "6088.HK",
       "category": "海外子公司",
-      "change_pct": 0.0,
-      "last_close": 4.96999979019165,
+      "change_pct": 0.507606447961238,
+      "last_close": 4.949999809265137,
       "currency": "HKD",
-      "price_display": "HK$4.97",
-      "market_cap": 143806229210.67188
+      "price_display": "HK$4.95",
+      "market_cap": 143150091279.18164
     },
     {
       "name": "帆宣",
       "ticker": "6196.TW",
       "category": "轉投資",
-      "change_pct": -3.7168141592920354,
-      "last_close": 544.0,
+      "change_pct": 7.536764705882352,
+      "last_close": 585.0,
       "currency": "TWD",
-      "price_display": "NT$544.00",
-      "market_cap": 119859265536.0
+      "price_display": "NT$585.00",
+      "market_cap": 128892780544.0
     },
     {
       "name": "鴻準",
       "ticker": "2354.TW",
       "category": "直系子公司",
-      "change_pct": -1.213965149065515,
-      "last_close": 65.0999984741211,
+      "change_pct": 0.9216566638778163,
+      "last_close": 65.69999694824219,
       "currency": "TWD",
-      "price_display": "NT$65.10",
-      "market_cap": 92082987008.0
+      "price_display": "NT$65.70",
+      "market_cap": 92931678208.0
     },
     {
       "name": "Sharp夏普",
       "ticker": "6753.T",
       "category": "轉投資",
-      "change_pct": -1.1853373554901483,
-      "last_close": 641.9000244140625,
+      "change_pct": 0.4362030980641616,
+      "last_close": 644.7000122070312,
       "currency": "JPY",
-      "price_display": "¥642",
-      "market_cap": 83483005356.14502
+      "price_display": "¥645",
+      "market_cap": 84098326575.06299
     },
     {
       "name": "樺漢",
       "ticker": "6414.TW",
       "category": "直系子公司",
-      "change_pct": 6.417112299465241,
-      "last_close": 398.0,
+      "change_pct": -1.507537688442211,
+      "last_close": 392.0,
       "currency": "TWD",
-      "price_display": "NT$398.00",
-      "market_cap": 58971762688.0
+      "price_display": "NT$392.00",
+      "market_cap": 58082742272.0
     },
     {
       "name": "訊芯-KY",
       "ticker": "6451.TW",
       "category": "轉投資",
-      "change_pct": 1.0922330097087378,
-      "last_close": 416.5,
+      "change_pct": 0.9603841536614646,
+      "last_close": 420.5,
       "currency": "TWD",
-      "price_display": "NT$416.50",
-      "market_cap": 47049920512.0
+      "price_display": "NT$420.50",
+      "market_cap": 47501783040.0
     },
     {
       "name": "京鼎",
       "ticker": "3413.TW",
       "category": "直系子公司",
-      "change_pct": 1.0416666666666665,
+      "change_pct": 0.0,
       "last_close": 291.0,
       "currency": "TWD",
       "price_display": "NT$291.00",
@@ -162,41 +162,41 @@
       "name": "廣宇",
       "ticker": "2328.TW",
       "category": "直系子公司",
-      "change_pct": 0.0,
-      "last_close": 47.0,
+      "change_pct": 1.1702111426820145,
+      "last_close": 47.54999923706055,
       "currency": "TWD",
-      "price_display": "NT$47.00",
-      "market_cap": 24362274816.0
+      "price_display": "NT$47.55",
+      "market_cap": 24647364608.0
     },
     {
       "name": "富鼎",
       "ticker": "8261.TW",
       "category": "直系子公司",
-      "change_pct": 0.2840909090909091,
-      "last_close": 176.5,
+      "change_pct": -0.28328611898017,
+      "last_close": 176.0,
       "currency": "TWD",
-      "price_display": "NT$176.50",
-      "market_cap": 20981966848.0
+      "price_display": "NT$176.00",
+      "market_cap": 20922527744.0
     },
     {
       "name": "正崴",
       "ticker": "2392.TW",
       "category": "轉投資",
-      "change_pct": -2.389486347576268,
-      "last_close": 40.849998474121094,
+      "change_pct": 1.835985380697463,
+      "last_close": 41.599998474121094,
       "currency": "TWD",
-      "price_display": "NT$40.85",
-      "market_cap": 18906357760.0
+      "price_display": "NT$41.60",
+      "market_cap": 19253475328.0
     },
     {
       "name": "乙盛-KY",
       "ticker": "5243.TW",
       "category": "轉投資",
-      "change_pct": -0.44893550250181635,
-      "last_close": 88.69999694824219,
+      "change_pct": 3.156711553656149,
+      "last_close": 91.5,
       "currency": "TWD",
-      "price_display": "NT$88.70",
-      "market_cap": 14948520960.0
+      "price_display": "NT$91.50",
+      "market_cap": 15420402688.0
     }
   ]
 }
