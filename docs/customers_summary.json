@@ -1,60 +1,60 @@
 {
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 24217687671498.97,
-  "total_change_pct": -1.9959907535605996,
+  "total_market_cap": 24158359588734.86,
+  "total_change_pct": -0.24604136137048294,
   "top_gainers": [
     {
-      "name": "小米",
-      "ticker": "1810.HK",
-      "change_pct": 2.5019021067382115,
-      "last_close": 27.040000915527344,
-      "currency": "HKD",
-      "price_display": "HK$27.04"
+      "name": "Oracle",
+      "ticker": "ORCL",
+      "change_pct": 3.002679492386677,
+      "last_close": 134.47000122070312,
+      "currency": "USD",
+      "price_display": "$134.47"
     },
     {
       "name": "Sony",
       "ticker": "6758.T",
-      "change_pct": 0.647836227001814,
-      "last_close": 3884.0,
+      "change_pct": 1.9309989701338828,
+      "last_close": 3959.0,
       "currency": "JPY",
-      "price_display": "¥3,884"
+      "price_display": "¥3,959"
     },
     {
-      "name": "Apple",
-      "ticker": "AAPL",
-      "change_pct": 0.4952098033262882,
-      "last_close": 342.9599914550781,
+      "name": "Microsoft",
+      "ticker": "MSFT",
+      "change_pct": 1.0774044808214844,
+      "last_close": 539.4400024414062,
       "currency": "USD",
-      "price_display": "$342.96"
+      "price_display": "$539.44"
     }
   ],
   "top_losers": [
     {
-      "name": "Dell",
-      "ticker": "DELL",
-      "change_pct": -11.273949958995019,
-      "last_close": 507.92999267578125,
-      "currency": "USD",
-      "price_display": "$507.93"
-    },
-    {
-      "name": "Oracle",
-      "ticker": "ORCL",
-      "change_pct": -8.833794808708378,
-      "last_close": 130.5500030517578,
-      "currency": "USD",
-      "price_display": "$130.55"
-    },
-    {
       "name": "HPE",
       "ticker": "HPE",
-      "change_pct": -8.283675556576602,
-      "last_close": 63.11000061035156,
+      "change_pct": -7.098715732703543,
+      "last_close": 58.630001068115234,
       "currency": "USD",
-      "price_display": "$63.11"
+      "price_display": "$58.63"
+    },
+    {
+      "name": "Dell",
+      "ticker": "DELL",
+      "change_pct": -6.800145399051301,
+      "last_close": 473.3900146484375,
+      "currency": "USD",
+      "price_display": "$473.39"
+    },
+    {
+      "name": "NVIDIA",
+      "ticker": "NVDA",
+      "change_pct": -1.8391356837292285,
+      "last_close": 217.22999572753906,
+      "currency": "USD",
+      "price_display": "$217.23"
     }
   ],
   "all": [
@@ -62,111 +62,111 @@
       "name": "NVIDIA",
       "ticker": "NVDA",
       "category": "芯片",
-      "change_pct": -3.159461353805519,
-      "last_close": 221.3000030517578,
+      "change_pct": -1.8391356837292285,
+      "last_close": 217.22999572753906,
       "currency": "USD",
-      "price_display": "$221.30",
-      "market_cap": 5343730991104.0
+      "price_display": "$217.23",
+      "market_cap": 5245452681216.0
     },
     {
       "name": "Apple",
       "ticker": "AAPL",
       "category": "消費電子",
-      "change_pct": 0.4952098033262882,
-      "last_close": 342.9599914550781,
+      "change_pct": -0.2799135406451243,
+      "last_close": 342.0,
       "currency": "USD",
-      "price_display": "$342.96",
-      "market_cap": 5005219725312.0
+      "price_display": "$342.00",
+      "market_cap": 4991209701376.0
     },
     {
       "name": "Google",
       "ticker": "GOOGL",
       "category": "雲端",
-      "change_pct": -1.7355373825668874,
-      "last_close": 347.6400146484375,
+      "change_pct": 0.45448927214648716,
+      "last_close": 349.2200012207031,
       "currency": "USD",
-      "price_display": "$347.64",
-      "market_cap": 4251614707712.0
+      "price_display": "$349.22",
+      "market_cap": 4270937866240.0
     },
     {
       "name": "Microsoft",
       "ticker": "MSFT",
       "category": "雲端",
-      "change_pct": -1.7959351451641614,
-      "last_close": 533.6900024414062,
+      "change_pct": 1.0774044808214844,
+      "last_close": 539.4400024414062,
       "currency": "USD",
-      "price_display": "$533.69",
-      "market_cap": 3962939637760.0
+      "price_display": "$539.44",
+      "market_cap": 4005636341760.0
     },
     {
       "name": "Amazon",
       "ticker": "AMZN",
       "category": "雲端",
-      "change_pct": -1.7402679924547533,
-      "last_close": 254.0800018310547,
+      "change_pct": 0.26762935724213244,
+      "last_close": 254.75999450683594,
       "currency": "USD",
-      "price_display": "$254.08",
-      "market_cap": 2740586545152.0
+      "price_display": "$254.76",
+      "market_cap": 2747921072128.0
     },
     {
       "name": "Meta",
       "ticker": "META",
       "category": "雲端",
-      "change_pct": -3.273445504610656,
-      "last_close": 737.5399780273438,
+      "change_pct": -0.11118140692684578,
+      "last_close": 736.719970703125,
       "currency": "USD",
-      "price_display": "$737.54",
-      "market_cap": 1878887628800.0
+      "price_display": "$736.72",
+      "market_cap": 1876798734336.0
     },
     {
       "name": "Oracle",
       "ticker": "ORCL",
       "category": "雲端",
-      "change_pct": -8.833794808708378,
-      "last_close": 130.5500030517578,
+      "change_pct": 3.002679492386677,
+      "last_close": 134.47000122070312,
       "currency": "USD",
-      "price_display": "$130.55",
-      "market_cap": 395762466816.0
+      "price_display": "$134.47",
+      "market_cap": 407645945856.0
     },
     {
       "name": "Dell",
       "ticker": "DELL",
       "category": "伺服器 OEM",
-      "change_pct": -11.273949958995019,
-      "last_close": 507.92999267578125,
+      "change_pct": -6.800145399051301,
+      "last_close": 473.3900146484375,
       "currency": "USD",
-      "price_display": "$507.93",
-      "market_cap": 322948366336.0
+      "price_display": "$473.39",
+      "market_cap": 300987416576.0
     },
     {
       "name": "Sony",
       "ticker": "6758.T",
       "category": "消費電子",
-      "change_pct": 0.647836227001814,
-      "last_close": 3884.0,
+      "change_pct": 1.9309989701338828,
+      "last_close": 3959.0,
       "currency": "JPY",
-      "price_display": "¥3,884",
-      "market_cap": 143511286993.16406
+      "price_display": "¥3,959",
+      "market_cap": 146414062272.40137
     },
     {
       "name": "小米",
       "ticker": "1810.HK",
       "category": "消費電子",
-      "change_pct": 2.5019021067382115,
-      "last_close": 27.040000915527344,
+      "change_pct": -1.4771034699306276,
+      "last_close": 26.68000030517578,
       "currency": "HKD",
-      "price_display": "HK$27.04",
-      "market_cap": 88710008313.80273
+      "price_display": "HK$26.68",
+      "market_cap": 87526499518.45703
     },
     {
       "name": "HPE",
       "ticker": "HPE",
       "category": "伺服器 OEM",
-      "change_pct": -8.283675556576602,
-      "last_close": 63.11000061035156,
+      "change_pct": -7.098715732703543,
+      "last_close": 58.630001068115234,
       "currency": "USD",
-      "price_display": "$63.11",
-      "market_cap": 83776307200.0
+      "price_display": "$58.63",
+      "market_cap": 77829267456.0
     }
   ]
 }
