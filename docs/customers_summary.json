@@ -3,8 +3,8 @@
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 23763460270247.1,
-  "total_change_pct": -1.639314694208387,
+  "total_market_cap": 23763466762262.285,
+  "total_change_pct": -1.6393142470260957,
   "top_gainers": [
     {
       "name": "Apple",
@@ -146,7 +146,7 @@
       "last_close": 3960.0,
       "currency": "JPY",
       "price_display": "¥3,960",
-      "market_cap": 146306465827.0078
+      "market_cap": 146312957842.19238
     },
     {
       "name": "小米",

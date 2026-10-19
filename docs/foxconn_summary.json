@@ -3,8 +3,8 @@
   "group": "foxconn",
   "title": "鴻海集團 + 轉投資",
   "base_currency": "TWD",
-  "total_market_cap": 9227629743575.92,
-  "total_change_pct": -0.7272923632965261,
+  "total_market_cap": 9224731839234.357,
+  "total_change_pct": -0.7584675506171092,
   "top_gainers": [
     {
       "name": "鴻騰精密FIT",
@@ -62,11 +62,11 @@
       "name": "工業富聯FII",
       "ticker": "601138.SS",
       "category": "海外子公司",
-      "change_pct": 0.25115686406008986,
-      "last_close": 47.900001525878906,
+      "change_pct": 0.18836365610559158,
+      "last_close": 47.869998931884766,
       "currency": "CNY",
-      "price_display": "¥47.90",
-      "market_cap": 4626429481242.0
+      "price_display": "¥47.87",
+      "market_cap": 4623531576900.4375
     },
     {
       "name": "鴻海",
