@@ -1,60 +1,60 @@
 {
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "group": "server",
   "title": "伺服器產業",
   "base_currency": "USD",
-  "total_market_cap": 18218584343270.73,
-  "total_change_pct": 0.6941457841958585,
+  "total_market_cap": 18190129654146.816,
+  "total_change_pct": -0.19509563532749977,
   "top_gainers": [
     {
-      "name": "Dell",
-      "ticker": "DELL",
-      "change_pct": 11.753091458546363,
-      "last_close": 373.67999267578125,
+      "name": "AMD",
+      "ticker": "AMD",
+      "change_pct": 5.860003969658386,
+      "last_close": 585.2999877929688,
       "currency": "USD",
-      "price_display": "$373.68"
-    },
-    {
-      "name": "SuperMicro",
-      "ticker": "SMCI",
-      "change_pct": 9.49981756989928,
-      "last_close": 30.43000030517578,
-      "currency": "USD",
-      "price_display": "$30.43"
-    },
-    {
-      "name": "Oracle",
-      "ticker": "ORCL",
-      "change_pct": 8.815054441399713,
-      "last_close": 128.3800048828125,
-      "currency": "USD",
-      "price_display": "$128.38"
-    }
-  ],
-  "top_losers": [
-    {
-      "name": "英業達",
-      "ticker": "2356.TW",
-      "change_pct": -8.984379336470672,
-      "last_close": 46.599998474121094,
-      "currency": "TWD",
-      "price_display": "NT$46.60"
+      "price_display": "$585.30"
     },
     {
       "name": "緯穎",
       "ticker": "6669.TW",
-      "change_pct": -6.547619047619048,
-      "last_close": 1570.0,
+      "change_pct": 4.140127388535031,
+      "last_close": 1635.0,
       "currency": "TWD",
-      "price_display": "NT$1,570.00"
+      "price_display": "NT$1,635.00"
     },
     {
-      "name": "廣達",
-      "ticker": "2382.TW",
-      "change_pct": -6.543624161073826,
-      "last_close": 278.5,
+      "name": "Google",
+      "ticker": "GOOGL",
+      "change_pct": 1.789061094431335,
+      "last_close": 298.70001220703125,
+      "currency": "USD",
+      "price_display": "$298.70"
+    }
+  ],
+  "top_losers": [
+    {
+      "name": "SuperMicro",
+      "ticker": "SMCI",
+      "change_pct": -11.304635226942517,
+      "last_close": 26.989999771118164,
+      "currency": "USD",
+      "price_display": "$26.99"
+    },
+    {
+      "name": "NVIDIA",
+      "ticker": "NVDA",
+      "change_pct": -4.340064163679479,
+      "last_close": 166.19000244140625,
+      "currency": "USD",
+      "price_display": "$166.19"
+    },
+    {
+      "name": "技嘉",
+      "ticker": "2376.TW",
+      "change_pct": -1.8998272884283247,
+      "last_close": 284.0,
       "currency": "TWD",
-      "price_display": "NT$278.50"
+      "price_display": "NT$284.00"
     }
   ],
   "all": [
@@ -62,171 +62,171 @@
       "name": "NVIDIA",
       "ticker": "NVDA",
       "category": "美系芯片",
-      "change_pct": 2.8657684619467627,
-      "last_close": 173.72999572753906,
+      "change_pct": -4.340064163679479,
+      "last_close": 166.19000244140625,
       "currency": "USD",
-      "price_display": "$173.73",
-      "market_cap": 4195058188288.0
+      "price_display": "$166.19",
+      "market_cap": 4012989743104.0
     },
     {
       "name": "Microsoft",
       "ticker": "MSFT",
       "category": "美系雲端",
-      "change_pct": -2.2563524772437513,
-      "last_close": 521.1300048828125,
+      "change_pct": 0.35883466690965327,
+      "last_close": 523.0,
       "currency": "USD",
-      "price_display": "$521.13",
-      "market_cap": 3869975511040.0
+      "price_display": "$523.00",
+      "market_cap": 3883899813888.0
     },
     {
       "name": "Google",
       "ticker": "GOOGL",
       "category": "美系雲端",
-      "change_pct": 2.1121884686076093,
-      "last_close": 293.45001220703125,
+      "change_pct": 1.789061094431335,
+      "last_close": 298.70001220703125,
       "currency": "USD",
-      "price_display": "$293.45",
-      "market_cap": 3607674224640.0
+      "price_display": "$298.70",
+      "market_cap": 3672217747456.0
     },
     {
       "name": "Amazon",
       "ticker": "AMZN",
       "category": "美系雲端",
-      "change_pct": -1.7351429741857358,
-      "last_close": 266.1700134277344,
+      "change_pct": 0.47713451914322397,
+      "last_close": 267.44000244140625,
       "currency": "USD",
-      "price_display": "$266.17",
-      "market_cap": 2878132977664.0
+      "price_display": "$267.44",
+      "market_cap": 2891865653248.0
     },
     {
       "name": "台積電",
       "ticker": "2330.TW",
       "category": "晶圓代工",
-      "change_pct": -2.2964509394572024,
-      "last_close": 2340.0,
+      "change_pct": 0.4273504273504274,
+      "last_close": 2350.0,
       "currency": "TWD",
-      "price_display": "NT$2,340.00",
-      "market_cap": 1840513553191.8281
+      "price_display": "NT$2,350.00",
+      "market_cap": 1854792453271.5469
     },
     {
       "name": "AMD",
       "ticker": "AMD",
       "category": "美系芯片",
-      "change_pct": 7.315463759244685,
-      "last_close": 552.9000244140625,
+      "change_pct": 5.860003969658386,
+      "last_close": 585.2999877929688,
       "currency": "USD",
-      "price_display": "$552.90",
-      "market_cap": 906804330496.0
+      "price_display": "$585.30",
+      "market_cap": 959943081984.0
     },
     {
       "name": "Oracle",
       "ticker": "ORCL",
       "category": "美系雲端",
-      "change_pct": 8.815054441399713,
-      "last_close": 128.3800048828125,
+      "change_pct": -0.9892539524517229,
+      "last_close": 127.11000061035156,
       "currency": "USD",
-      "price_display": "$128.38",
-      "market_cap": 400251387904.0
+      "price_display": "$127.11",
+      "market_cap": 396291866624.0
     },
     {
       "name": "Dell",
       "ticker": "DELL",
       "category": "美系伺服器",
-      "change_pct": 11.753091458546363,
-      "last_close": 373.67999267578125,
+      "change_pct": -0.6716921690331511,
+      "last_close": 371.1700134277344,
       "currency": "USD",
-      "price_display": "$373.68",
-      "market_cap": 237590495232.0
+      "price_display": "$371.17",
+      "market_cap": 235994628096.0
     },
     {
       "name": "鴻海",
       "ticker": "2317.TW",
       "category": "台廠ODM",
-      "change_pct": -0.8264462809917356,
-      "last_close": 240.0,
+      "change_pct": 0.4166666666666667,
+      "last_close": 241.0,
       "currency": "TWD",
-      "price_display": "NT$240.00",
-      "market_cap": 102451411972.41895
+      "price_display": "NT$241.00",
+      "market_cap": 103235253852.20508
     },
     {
       "name": "HPE",
       "ticker": "HPE",
       "category": "美系伺服器",
-      "change_pct": 4.84039157115067,
-      "last_close": 50.25,
+      "change_pct": -0.17910478126943408,
+      "last_close": 50.15999984741211,
       "currency": "USD",
-      "price_display": "$50.25",
-      "market_cap": 66705108992.0
+      "price_display": "$50.16",
+      "market_cap": 66585636864.0
     },
     {
       "name": "廣達",
       "ticker": "2382.TW",
       "category": "台廠ODM",
-      "change_pct": -6.543624161073826,
-      "last_close": 278.5,
+      "change_pct": -0.718132854578097,
+      "last_close": 276.5,
       "currency": "TWD",
-      "price_display": "NT$278.50",
-      "market_cap": 34628930477.15283
+      "price_display": "NT$276.50",
+      "market_cap": 34499538195.68994
     },
     {
       "name": "緯穎",
       "ticker": "6669.TW",
       "category": "台廠ODM",
-      "change_pct": -6.547619047619048,
-      "last_close": 1570.0,
+      "change_pct": 4.140127388535031,
+      "last_close": 1635.0,
       "currency": "TWD",
-      "price_display": "NT$1,570.00",
-      "market_cap": 27810755800.315186
-    },
-    {
-      "name": "SuperMicro",
-      "ticker": "SMCI",
-      "category": "美系伺服器",
-      "change_pct": 9.49981756989928,
-      "last_close": 30.43000030517578,
-      "currency": "USD",
-      "price_display": "$30.43",
-      "market_cap": 20060289024.0
+      "price_display": "NT$1,635.00",
+      "market_cap": 29062649165.18335
     },
     {
       "name": "緯創",
       "ticker": "3231.TW",
       "category": "台廠ODM",
-      "change_pct": -2.5787965616045847,
-      "last_close": 170.0,
+      "change_pct": 0.5882352941176471,
+      "last_close": 171.0,
       "currency": "TWD",
-      "price_display": "NT$170.00",
-      "market_cap": 17684961278.49585
+      "price_display": "NT$171.00",
+      "market_cap": 17850713239.803223
+    },
+    {
+      "name": "SuperMicro",
+      "ticker": "SMCI",
+      "category": "美系伺服器",
+      "change_pct": -11.304635226942517,
+      "last_close": 26.989999771118164,
+      "currency": "USD",
+      "price_display": "$26.99",
+      "market_cap": 17792546816.0
     },
     {
       "name": "技嘉",
       "ticker": "2376.TW",
       "category": "台廠零組件",
-      "change_pct": -5.081967213114754,
-      "last_close": 289.5,
+      "change_pct": -1.8998272884283247,
+      "last_close": 284.0,
       "currency": "TWD",
-      "price_display": "NT$289.50",
-      "market_cap": 5882099705.095764
+      "price_display": "NT$284.00",
+      "market_cap": 5790371739.428467
     },
     {
       "name": "英業達",
       "ticker": "2356.TW",
       "category": "台廠零組件",
-      "change_pct": -8.984379336470672,
-      "last_close": 46.599998474121094,
+      "change_pct": -1.1802559121670018,
+      "last_close": 46.04999923706055,
       "currency": "TWD",
-      "price_display": "NT$46.60",
-      "market_cap": 5070558532.232483
+      "price_display": "NT$46.05",
+      "market_cap": 5028098851.869873
     },
     {
       "name": "勤誠",
       "ticker": "8210.TW",
       "category": "台廠零組件",
-      "change_pct": -0.9884678747940692,
-      "last_close": 601.0,
+      "change_pct": -0.33277870216306155,
+      "last_close": 599.0,
       "currency": "TWD",
-      "price_display": "NT$601.00",
-      "market_cap": 2289559033.192047
+      "price_display": "NT$599.00",
+      "market_cap": 2289857751.089813
     }
   ]
 }
