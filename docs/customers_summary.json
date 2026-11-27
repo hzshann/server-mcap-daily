@@ -1,11 +1,19 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "group": "customers",
   "title": "鴻海主要客戶",
   "base_currency": "USD",
-  "total_market_cap": 20787952516742.367,
-  "total_change_pct": -1.3972401820008373,
+  "total_market_cap": 20789063793629.777,
+  "total_change_pct": -1.3812612730529454,
   "top_gainers": [
+    {
+      "name": "小米",
+      "ticker": "1810.HK",
+      "change_pct": 3.9097706513688704,
+      "last_close": 27.639999389648438,
+      "currency": "HKD",
+      "price_display": "HK$27.64"
+    },
     {
       "name": "Meta",
       "ticker": "META",
@@ -21,14 +29,6 @@
       "last_close": 40.81999969482422,
       "currency": "USD",
       "price_display": "$40.82"
-    },
-    {
-      "name": "小米",
-      "ticker": "1810.HK",
-      "change_pct": 1.2801210821704623,
-      "last_close": 26.899999618530273,
-      "currency": "HKD",
-      "price_display": "HK$26.90"
     }
   ],
   "top_losers": [
@@ -142,21 +142,21 @@
       "name": "Sony",
       "ticker": "6758.T",
       "category": "消費電子",
-      "change_pct": -1.4402836250830933,
-      "last_close": 4448.0,
+      "change_pct": -0.7868705035971223,
+      "last_close": 4413.0,
       "currency": "JPY",
-      "price_display": "¥4,448",
-      "market_cap": 162811017468.9131
+      "price_display": "¥4,413",
+      "market_cap": 161396106540.13672
     },
     {
       "name": "小米",
       "ticker": "1810.HK",
       "category": "消費電子",
-      "change_pct": 1.2801210821704623,
-      "last_close": 26.899999618530273,
+      "change_pct": 3.9097706513688704,
+      "last_close": 27.639999389648438,
       "currency": "HKD",
-      "price_display": "HK$26.90",
-      "market_cap": 88291956105.4541
+      "price_display": "HK$27.64",
+      "market_cap": 90818143921.64062
     },
     {
       "name": "HPE",

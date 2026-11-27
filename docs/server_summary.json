@@ -1,34 +1,34 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "group": "server",
   "title": "伺服器產業",
   "base_currency": "USD",
-  "total_market_cap": 16367776883927.15,
-  "total_change_pct": -2.213642175563341,
+  "total_market_cap": 16400305228143.814,
+  "total_change_pct": -2.081456365759827,
   "top_gainers": [
-    {
-      "name": "勤誠",
-      "ticker": "8210.TW",
-      "change_pct": 9.90888382687927,
-      "last_close": 482.5,
-      "currency": "TWD",
-      "price_display": "NT$482.50"
-    },
-    {
-      "name": "緯創",
-      "ticker": "3231.TW",
-      "change_pct": 9.868421052631579,
-      "last_close": 167.0,
-      "currency": "TWD",
-      "price_display": "NT$167.00"
-    },
     {
       "name": "緯穎",
       "ticker": "6669.TW",
-      "change_pct": 9.79020979020979,
-      "last_close": 1570.0,
+      "change_pct": 6.369426751592357,
+      "last_close": 1670.0,
       "currency": "TWD",
-      "price_display": "NT$1,570.00"
+      "price_display": "NT$1,670.00"
+    },
+    {
+      "name": "SuperMicro",
+      "ticker": "SMCI",
+      "change_pct": 3.0503916936740874,
+      "last_close": 23.309999465942383,
+      "currency": "USD",
+      "price_display": "$23.31"
+    },
+    {
+      "name": "台積電",
+      "ticker": "2330.TW",
+      "change_pct": 1.6317016317016315,
+      "last_close": 2180.0,
+      "currency": "TWD",
+      "price_display": "NT$2,180.00"
     }
   ],
   "top_losers": [
@@ -102,11 +102,11 @@
       "name": "台積電",
       "ticker": "2330.TW",
       "category": "晶圓代工",
-      "change_pct": -0.23255813953488372,
-      "last_close": 2145.0,
+      "change_pct": 1.6317016317016315,
+      "last_close": 2180.0,
       "currency": "TWD",
-      "price_display": "NT$2,145.00",
-      "market_cap": 1685603891352.0
+      "price_display": "NT$2,180.00",
+      "market_cap": 1715915677001.3438
     },
     {
       "name": "AMD",
@@ -142,11 +142,11 @@
       "name": "鴻海",
       "ticker": "2317.TW",
       "category": "台廠ODM",
-      "change_pct": 4.842615012106537,
-      "last_close": 216.5,
+      "change_pct": 1.1547344110854503,
+      "last_close": 219.0,
       "currency": "TWD",
-      "price_display": "NT$216.50",
-      "market_cap": 92335698810.0
+      "price_display": "NT$219.00",
+      "market_cap": 93555021941.57373
     },
     {
       "name": "HPE",
@@ -162,31 +162,31 @@
       "name": "廣達",
       "ticker": "2382.TW",
       "category": "台廠ODM",
-      "change_pct": 7.662835249042145,
-      "last_close": 281.0,
+      "change_pct": -1.0676156583629894,
+      "last_close": 278.0,
       "currency": "TWD",
-      "price_display": "NT$281.00",
-      "market_cap": 34908021528.09766
+      "price_display": "NT$278.00",
+      "market_cap": 34591944424.36597
     },
     {
       "name": "緯穎",
       "ticker": "6669.TW",
       "category": "台廠ODM",
-      "change_pct": 9.79020979020979,
-      "last_close": 1570.0,
+      "change_pct": 6.369426751592357,
+      "last_close": 1670.0,
       "currency": "TWD",
-      "price_display": "NT$1,570.00",
-      "market_cap": 27785475496.677734
+      "price_display": "NT$1,670.00",
+      "market_cap": 29603693201.075684
     },
     {
       "name": "緯創",
       "ticker": "3231.TW",
       "category": "台廠ODM",
-      "change_pct": 9.868421052631579,
-      "last_close": 167.0,
+      "change_pct": -2.9940119760479043,
+      "last_close": 162.0,
       "currency": "TWD",
-      "price_display": "NT$167.00",
-      "market_cap": 17357081031.220703
+      "price_display": "NT$162.00",
+      "market_cap": 16865005276.077759
     },
     {
       "name": "SuperMicro",
@@ -202,31 +202,31 @@
       "name": "技嘉",
       "ticker": "2376.TW",
       "category": "台廠零組件",
-      "change_pct": 4.789272030651341,
+      "change_pct": 0.0,
       "last_close": 273.5,
       "currency": "TWD",
       "price_display": "NT$273.50",
-      "market_cap": 5551958367.643066
+      "market_cap": 5561058167.522369
     },
     {
       "name": "英業達",
       "ticker": "2356.TW",
       "category": "台廠零組件",
-      "change_pct": 6.615782033823844,
+      "change_pct": 0.0,
       "last_close": 41.900001525878906,
       "currency": "TWD",
       "price_display": "NT$41.90",
-      "market_cap": 4555006335.9921875
+      "market_cap": 4562472106.331543
     },
     {
       "name": "勤誠",
       "ticker": "8210.TW",
       "category": "台廠零組件",
-      "change_pct": 9.90888382687927,
-      "last_close": 482.5,
+      "change_pct": -1.7616580310880827,
+      "last_close": 474.0,
       "currency": "TWD",
-      "price_display": "NT$482.50",
-      "market_cap": 1836452701.5184326
+      "price_display": "NT$474.00",
+      "market_cap": 1807057721.5245895
     }
   ]
 }
